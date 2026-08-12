@@ -251,7 +251,7 @@ export default function Home() {
             href="mailto:rosaebrew@gmail.com?subject=My%20café%20project"
             id="cta-email"
           >
-            Email us about your café
+            Email us about your café.
           </a>
         </div>
         <p className="cta-note">rosaebrew@gmail.com · Jaipur, India · Working everywhere</p>
