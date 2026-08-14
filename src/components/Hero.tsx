@@ -6,7 +6,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
   return (
-    <section style={{ paddingTop: '2rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
+    <section style={{ paddingTop: '6.5rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
       <div className="container" style={{ textAlign: 'center' }}>
         {/* Perfectly Centered & 100% Responsive Display Wordmark */}
         <div

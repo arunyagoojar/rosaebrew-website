@@ -45,17 +45,22 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
               />
             </span>{' '}
             Creative{' '}
-            {/* Inline Pencil Doodle */}
+            {/* Inline Vector Pencil Doodle */}
             <span
               style={{
-                display: 'inline-block',
-                fontSize: '2.2rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '38px',
+                height: '38px',
                 verticalAlign: 'middle',
                 transform: 'rotate(15deg)',
-                margin: '0 0.25rem',
+                margin: '0 0.35rem',
               }}
             >
-              ✏️
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none">
+                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" fill="#F59E0B" stroke="#121212" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </span>
             <br />
             {/* Inline Silhouette Badge */}
