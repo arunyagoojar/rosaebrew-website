@@ -6,22 +6,22 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
   return (
-    <section style={{ paddingTop: '6.5rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
+    <section style={{ paddingTop: '9rem', paddingBottom: '5.5rem', position: 'relative', overflow: 'hidden' }}>
       <div className="container" style={{ textAlign: 'center' }}>
-        {/* Perfectly Centered & 100% Responsive Display Wordmark */}
+        {/* Perfectly Centered Wordmark with Depth-Layered Butterfly-Like Mouse Pointers */}
         <div
           style={{
             position: 'relative',
             width: '100%',
             maxWidth: '960px',
-            margin: '0 auto 2.5rem auto',
+            margin: '0 auto 2.75rem auto',
             padding: '0 0.5rem',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
           }}
         >
-          {/* 100% Constrained SVG — Guaranteed to never overflow on any mobile or desktop screen */}
+          {/* 100% Constrained SVG Wordmark */}
           <svg
             viewBox="0 0 1000 130"
             width="100%"
@@ -48,48 +48,68 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
             </text>
           </svg>
 
-          {/* Pointer 1: Orange Pointer */}
-          <div className="floating-pointer pointer-1">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+          {/* =========================================================
+              BUTTERFLY-LIKE MOUSE POINTERS WITH REAL VISUAL DEPTH
+              ========================================================= */}
+          
+          {/* 1. Foreground Sharp Pointers (20px - 18px) */}
+          <div className="butterfly-pointer bf-pointer-1">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#FF6B00" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
             </svg>
           </div>
 
-          {/* Pointer 2: Emerald Green Pointer */}
-          <div className="floating-pointer pointer-2">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+          <div className="butterfly-pointer bf-pointer-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#10B981" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
             </svg>
           </div>
 
-          {/* Pointer 3: Purple Pointer */}
-          <div className="floating-pointer pointer-3">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+          <div className="butterfly-pointer bf-pointer-3">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#A855F7" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
             </svg>
           </div>
 
-          {/* Pointer 4: Cyan Pointer */}
-          <div className="floating-pointer pointer-4">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+          <div className="butterfly-pointer bf-pointer-4">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#06B6D4" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
             </svg>
           </div>
 
-          {/* Pointer 5: Amber Pointer */}
-          <div className="floating-pointer pointer-5">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+          {/* 2. Midground Smaller Fluttering Pointers (14px - 13px) */}
+          <div className="butterfly-pointer bf-pointer-5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#F59E0B" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          <div className="butterfly-pointer bf-pointer-6">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#EC4899" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* 3. Background Tiny Distant Pointers (10px - 9px with subtle blur) */}
+          <div className="butterfly-pointer bf-pointer-7">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#84CC16" stroke="#121212" strokeWidth="1" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          <div className="butterfly-pointer bf-pointer-8">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none">
+              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#38BDF8" stroke="#121212" strokeWidth="1" strokeLinejoin="round" />
             </svg>
           </div>
         </div>
 
         {/* Hero Editorial Subtitle */}
-        <div style={{ maxWidth: '780px', margin: '0 auto 3rem auto' }}>
+        <div style={{ maxWidth: '780px', margin: '0 auto 3.5rem auto' }}>
           <p
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(1.3rem, 2.5vw, 2rem)',
+              fontSize: 'clamp(1.35rem, 2.6vw, 2.1rem)',
               color: 'var(--text-dark)',
               fontWeight: 500,
               letterSpacing: '-0.01em',
