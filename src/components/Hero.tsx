@@ -44,7 +44,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
               fontSize="120"
               fill="#121212"
             >
-              ROSAEBREW
+              ROSÉBREW
             </text>
           </svg>
 
@@ -203,7 +203,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
             </div>
           </div>
 
-          {/* Bottom Dark Bar without dashes */}
+          {/* Bottom Dark Bar */}
           <div
             style={{
               backgroundColor: '#111111',
@@ -218,7 +218,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
               gap: '0.5rem',
             }}
           >
-            <span>Rosaebrew, Independent Digital Studio</span>
+            <span>RoséBrew, Independent Digital Studio</span>
             <span>Projects start from ₹5,000 | Email: rosaebrew@gmail.com</span>
           </div>
         </div>

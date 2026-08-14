@@ -19,7 +19,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({ isOpen
     e.preventDefault();
     const subject = encodeURIComponent(`Project Inquiry: ${name} (${businessType || 'Independent Business'})`);
     const body = encodeURIComponent(
-      `Hello Rosaebrew,\n\n` +
+      `Hello RoséBrew,\n\n` +
         `I would like to discuss a website project:\n\n` +
         `• Name / Business: ${name}\n` +
         `• Email: ${email}\n` +
@@ -113,7 +113,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({ isOpen
         ) : (
           <div>
             <div style={{ marginBottom: '1.75rem' }}>
-              <span style={{ fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--accent-blue)' }}>
+              <span style={{ fontSize: '0.78rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#0EA5E9' }}>
                 ✦ START A PROJECT
               </span>
               <h3 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-dark)', marginTop: '0.35rem', letterSpacing: '-0.03em' }}>
