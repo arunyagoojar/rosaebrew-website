@@ -1,5 +1,4 @@
 import React from 'react';
-import showcaseImg from '../assets/showcase.jpg';
 
 interface CreativePillarsProps {
   onOpenProjectModal: () => void;
@@ -25,13 +24,13 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
             }}
           >
             We're a{' '}
-            {/* Inline Photo Capsule Badge — Guaranteed 100% Visible */}
+            {/* Inline Panoramic Sunset / Landscape Capsule Badge matching TURN.STUDIO */}
             <span
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: '76px',
+                width: '78px',
                 height: '42px',
                 borderRadius: '9999px',
                 overflow: 'hidden',
@@ -39,15 +38,27 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
                 margin: '0 0.35rem',
                 border: '2px solid #121212',
                 boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                backgroundColor: '#1E293B',
                 position: 'relative',
               }}
             >
-              <img
-                src={showcaseImg}
-                alt="Studio Visual"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
+              <svg viewBox="0 0 100 54" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
+                {/* Sky Gradient */}
+                <defs>
+                  <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="54" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#1E3A8A" />
+                    <stop offset="45%" stopColor="#3B82F6" />
+                    <stop offset="75%" stopColor="#F97316" />
+                    <stop offset="100%" stopColor="#FBBF24" />
+                  </linearGradient>
+                </defs>
+                <rect width="100" height="54" fill="url(#skyGrad)" />
+                {/* Glowing Sun */}
+                <circle cx="50" cy="34" r="10" fill="#FEF08A" opacity="0.9" />
+                {/* Mountain Silhouettes */}
+                <polygon points="-5,54 28,32 52,54" fill="#1E293B" opacity="0.85" />
+                <polygon points="35,54 68,26 105,54" fill="#0F172A" />
+                <polygon points="12,54 42,38 72,54" fill="#334155" opacity="0.75" />
+              </svg>
             </span>{' '}
             Creative{' '}
             {/* Inline Vector Pencil Doodle */}
@@ -90,7 +101,7 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
           </h2>
         </div>
 
-        {/* 3 Tilted Colored Cards with EXACT Vector Line Icons from TURN.STUDIO */}
+        {/* 3 Tilted Colored Cards with Vector Line Icons */}
         <div
           style={{
             display: 'grid',
