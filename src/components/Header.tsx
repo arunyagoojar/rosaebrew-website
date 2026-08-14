@@ -1,8 +1,12 @@
 import React from 'react';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  onOpenProjectModal: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onOpenProjectModal }) => {
   return (
-    <header style={{ padding: '1.75rem 0', backgroundColor: 'var(--bg-main)' }}>
+    <header style={{ padding: '1.5rem 0', backgroundColor: 'var(--bg-main)', position: 'relative', zIndex: 10 }}>
       <div
         className="container"
         style={{
@@ -11,16 +15,15 @@ export const Header: React.FC = () => {
           justifyContent: 'space-between',
         }}
       >
-        {/* Left Pill Button */}
+        {/* Left Action Button */}
         <div>
-          <a
-            href="https://wa.me/919257213228?text=Hi%20Rosaebrew,%20I%20would%20like%20to%20start%20a%20website%20project%20for%20my%20business."
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={onOpenProjectModal}
             className="btn-pill-white"
+            style={{ fontSize: '0.84rem' }}
           >
             <span>Let's Start a Project</span>
-          </a>
+          </button>
         </div>
 
         {/* Center Brand Mark */}
@@ -37,11 +40,15 @@ export const Header: React.FC = () => {
           </span>
         </div>
 
-        {/* Right Menu Button */}
+        {/* Right Action Button */}
         <div>
-          <a href="#services" className="btn-pill-white">
-            <span>Menu</span>
-          </a>
+          <button
+            onClick={onOpenProjectModal}
+            className="btn-pill-white"
+            style={{ fontSize: '0.84rem' }}
+          >
+            <span>Contact</span>
+          </button>
         </div>
       </div>
     </header>

@@ -24,7 +24,7 @@ export const CoreServices: React.FC = () => {
       icon: '💬',
       title: 'Enquiry & Contact Flows',
       description:
-        'Frictionless inquiry channels tailored to how you operate — direct WhatsApp links, structured contact forms, booking links, or email routing so you never miss an incoming lead.',
+        'Frictionless inquiry channels tailored to how you operate — structured contact forms, booking links, or direct email routing so you never miss an incoming lead.',
     },
   ];
 

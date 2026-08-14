@@ -1,19 +1,35 @@
 import React from 'react';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenProjectModal: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
   return (
-    <section style={{ paddingTop: '1rem', paddingBottom: '5rem', position: 'relative' }}>
+    <section style={{ paddingTop: '2.5rem', paddingBottom: '5rem', position: 'relative' }}>
       <div className="container" style={{ textAlign: 'center' }}>
-        {/* Giant Ultra-Bold Display Header with Multiplayer Cursors */}
-        <div style={{ position: 'relative', display: 'inline-block', width: '100%', margin: '0 auto 1.5rem auto' }}>
+        {/* Perfectly Centered Display Header with Proportional Sizing & Multiplayer Cursors */}
+        <div
+          style={{
+            position: 'relative',
+            display: 'inline-block',
+            maxWidth: '1000px',
+            width: '100%',
+            margin: '0 auto 2rem auto',
+            textAlign: 'center',
+          }}
+        >
           <h1
             className="font-display"
             style={{
-              fontSize: 'clamp(3.8rem, 13.5vw, 12rem)',
-              lineHeight: 0.85,
+              fontSize: 'clamp(2.8rem, 8.5vw, 7.5rem)',
+              lineHeight: 0.92,
               color: 'var(--text-dark)',
-              letterSpacing: '-0.06em',
+              letterSpacing: '-0.04em',
               userSelect: 'none',
+              textAlign: 'center',
+              width: '100%',
+              margin: '0 auto',
             }}
           >
             ROSAEBREW
@@ -23,8 +39,8 @@ export const Hero: React.FC = () => {
           <div
             className="cursor-tag cursor-tag-orange"
             style={{
-              top: '-12px',
-              left: '19%',
+              top: '-14px',
+              left: '12%',
             }}
           >
             <span style={{ fontSize: '0.65rem' }}>▲</span>
@@ -35,8 +51,8 @@ export const Hero: React.FC = () => {
           <div
             className="cursor-tag cursor-tag-green"
             style={{
-              bottom: '8px',
-              left: '10%',
+              bottom: '-8px',
+              left: '8%',
             }}
           >
             <span style={{ fontSize: '0.65rem' }}>▲</span>
@@ -47,8 +63,8 @@ export const Hero: React.FC = () => {
           <div
             className="cursor-tag cursor-tag-pink"
             style={{
-              bottom: '12px',
-              right: '12%',
+              bottom: '-6px',
+              right: '10%',
             }}
           >
             <span style={{ fontSize: '0.65rem' }}>▲</span>
@@ -60,7 +76,7 @@ export const Hero: React.FC = () => {
             className="stamp-badge-cyan"
             style={{
               top: '-25px',
-              right: '4%',
+              right: '2%',
             }}
           >
             Building<br />for ambitious<br />brands
@@ -68,24 +84,25 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Hero Editorial Subtitle */}
-        <div style={{ maxWidth: '820px', margin: '0 auto 3rem auto' }}>
+        <div style={{ maxWidth: '780px', margin: '0 auto 3rem auto' }}>
           <p
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(1.4rem, 2.8vw, 2.2rem)',
+              fontSize: 'clamp(1.3rem, 2.5vw, 2rem)',
               color: 'var(--text-dark)',
               fontWeight: 500,
               letterSpacing: '-0.01em',
+              lineHeight: 1.35,
             }}
           >
             We Craft Distinctive Websites, Not Just Pages
           </p>
         </div>
 
-        {/* Giant Showcase Frame */}
+        {/* Showcase Frame */}
         <div
           style={{
-            maxWidth: '1120px',
+            maxWidth: '1080px',
             margin: '0 auto',
             borderRadius: '28px',
             overflow: 'hidden',
@@ -95,15 +112,15 @@ export const Hero: React.FC = () => {
             position: 'relative',
           }}
         >
-          {/* Internal Showcase Layout with Rich Modern Composition */}
+          {/* Internal Showcase Layout */}
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
               backgroundColor: '#0F172A',
               color: '#FFFFFF',
               textAlign: 'left',
-              minHeight: '380px',
+              minHeight: '360px',
             }}
           >
             {/* Left Box */}
@@ -113,24 +130,22 @@ export const Hero: React.FC = () => {
                 <span style={{ fontWeight: 700, fontSize: '0.95rem', letterSpacing: '0.05em' }}>DIGITAL PRESENCE</span>
               </div>
 
-              <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 3rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '1rem', letterSpacing: '-0.03em' }}>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 3.2vw, 2.8rem)', fontWeight: 800, lineHeight: 1.15, marginBottom: '1rem', letterSpacing: '-0.03em' }}>
                 Better business starts <span style={{ color: '#38BDF8' }}>here.</span>
               </h2>
 
-              <p style={{ color: '#94A3B8', fontSize: '1rem', lineHeight: 1.6, maxWidth: '420px', marginBottom: '2rem' }}>
+              <p style={{ color: '#94A3B8', fontSize: '0.96rem', lineHeight: 1.6, maxWidth: '420px', marginBottom: '2rem' }}>
                 Thoughtful websites built to help independent businesses and professionals present their work clearly, build trust, and receive direct client enquiries.
               </p>
 
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <a
-                  href="https://wa.me/919257213228"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={onOpenProjectModal}
                   className="btn-pill-lime"
-                  style={{ fontSize: '0.86rem', padding: '0.75rem 1.6rem' }}
+                  style={{ fontSize: '0.86rem', padding: '0.75rem 1.6rem', border: 'none', cursor: 'pointer' }}
                 >
                   <span>Start Your Project</span>
-                </a>
+                </button>
               </div>
             </div>
 
@@ -160,7 +175,7 @@ export const Hero: React.FC = () => {
                 <div style={{ fontSize: '0.8rem', color: '#38BDF8', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>
                   ✦ DIRECT ONLINE PRESENCE
                 </div>
-                <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.5rem' }}>
+                <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '0.5rem' }}>
                   Built for owner-led businesses.
                 </div>
                 <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.6 }}>
@@ -170,7 +185,7 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Bottom Dark Textured Bar */}
+          {/* Bottom Dark Bar */}
           <div
             style={{
               backgroundColor: '#111111',
@@ -181,10 +196,12 @@ export const Hero: React.FC = () => {
               alignItems: 'center',
               fontSize: '0.82rem',
               color: '#888888',
+              flexWrap: 'wrap',
+              gap: '0.5rem',
             }}
           >
             <span>Rosaebrew • Independent Digital Studio</span>
-            <span>Projects start from ₹5,000</span>
+            <span>Projects start from ₹5,000 • Direct email: rosaebrew@gmail.com</span>
           </div>
         </div>
       </div>

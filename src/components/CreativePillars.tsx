@@ -1,6 +1,10 @@
 import React from 'react';
 
-export const CreativePillars: React.FC = () => {
+interface CreativePillarsProps {
+  onOpenProjectModal: () => void;
+}
+
+export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectModal }) => {
   return (
     <section id="services" style={{ padding: '7rem 0', backgroundColor: 'var(--bg-main)' }}>
       <div className="container">
@@ -71,7 +75,7 @@ export const CreativePillars: React.FC = () => {
           </h2>
         </div>
 
-        {/* 3 Tilted Colored Cards matching TURN.STUDIO */}
+        {/* 3 Tilted Colored Cards with LARGER Icons matching TURN.STUDIO */}
         <div
           style={{
             display: 'grid',
@@ -84,7 +88,7 @@ export const CreativePillars: React.FC = () => {
         >
           {/* Card 1: Pastel Blue (Tilted Left) */}
           <div className="tilted-card card-tilt-left" style={{ backgroundColor: 'var(--pastel-blue)' }}>
-            <div style={{ fontSize: '2.4rem', marginBottom: '1.25rem' }}>✻</div>
+            <div style={{ fontSize: '3.4rem', marginBottom: '1.25rem', lineHeight: 1 }}>✻</div>
             <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.65rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
               Web Design & Build
             </h3>
@@ -100,13 +104,13 @@ export const CreativePillars: React.FC = () => {
 
           {/* Card 2: Pastel Green (Tilted Center) */}
           <div className="tilted-card card-tilt-center" style={{ backgroundColor: 'var(--pastel-green)' }}>
-            <div style={{ fontSize: '2.4rem', marginBottom: '1.25rem' }}>☕</div>
+            <div style={{ fontSize: '3.4rem', marginBottom: '1.25rem', lineHeight: 1 }}>☕</div>
             <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.65rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
               Digital Touchpoints
             </h3>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.92rem', color: 'var(--text-dark)', fontWeight: 500 }}>
               <li>Custom Domain Connection</li>
-              <li>Direct WhatsApp Integration</li>
+              <li>Structured Contact Touchpoints</li>
               <li>Enquiry & Booking Flows</li>
               <li>Location & Contact Info</li>
               <li>Email Routing Setup</li>
@@ -116,7 +120,7 @@ export const CreativePillars: React.FC = () => {
 
           {/* Card 3: Pastel Peach (Tilted Right) */}
           <div className="tilted-card card-tilt-right" style={{ backgroundColor: 'var(--pastel-peach)' }}>
-            <div style={{ fontSize: '2.4rem', marginBottom: '1.25rem' }}>🌀</div>
+            <div style={{ fontSize: '3.4rem', marginBottom: '1.25rem', lineHeight: 1 }}>🌀</div>
             <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.65rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
               Content & Direction
             </h3>
@@ -133,16 +137,14 @@ export const CreativePillars: React.FC = () => {
 
         {/* Bottom Button */}
         <div style={{ textAlign: 'center' }}>
-          <a
-            href="https://wa.me/919257213228"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={onOpenProjectModal}
             className="btn-pill-white"
-            style={{ padding: '0.85rem 2.2rem', fontSize: '0.92rem' }}
+            style={{ padding: '0.85rem 2.2rem', fontSize: '0.92rem', border: '1px solid rgba(0,0,0,0.15)', cursor: 'pointer' }}
           >
             <span>Let's Connect Today</span>
             <span>→</span>
-          </a>
+          </button>
         </div>
       </div>
     </section>

@@ -1,6 +1,10 @@
 import React from 'react';
 
-export const PricingSection: React.FC = () => {
+interface PricingSectionProps {
+  onOpenProjectModal: () => void;
+}
+
+export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenProjectModal }) => {
   return (
     <section id="pricing" style={{ padding: '5.5rem 0', backgroundColor: '#FFFFFF', borderTop: '1px solid var(--border-light)' }}>
       <div className="container-narrow">
@@ -55,16 +59,14 @@ export const PricingSection: React.FC = () => {
             Every project begins with a clear scope discussion. We provide an exact, upfront quotation based on your specific requirements before any work begins.
           </p>
 
-          <a
-            href="https://wa.me/919257213228?text=Hi%20Rosaebrew,%20I%20would%20like%20to%20get%20a%20quote%20for%20my%20website%20project."
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={onOpenProjectModal}
             className="btn-pill-black"
-            style={{ padding: '0.85rem 2rem' }}
+            style={{ padding: '0.85rem 2rem', border: 'none', cursor: 'pointer' }}
           >
             <span>Request a Project Quote</span>
-            <span>💬</span>
-          </a>
+            <span>→</span>
+          </button>
         </div>
 
         {/* Pricing Notes & Terms */}

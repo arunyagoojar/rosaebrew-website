@@ -1,8 +1,12 @@
 import React from 'react';
 
-export const ContactFooter: React.FC = () => {
+interface ContactFooterProps {
+  onOpenProjectModal: () => void;
+}
+
+export const ContactFooter: React.FC<ContactFooterProps> = ({ onOpenProjectModal }) => {
   return (
-    <footer style={{ backgroundColor: 'var(--bg-dark)', color: '#FFFFFF', paddingTop: '5.5rem', paddingBottom: '3rem' }}>
+    <footer style={{ backgroundColor: 'var(--bg-dark)', color: '#FFFFFF', paddingTop: '5.5rem', paddingBottom: '3.5rem' }}>
       <div className="container">
         {/* Contact Block */}
         <div
@@ -31,19 +35,27 @@ export const ContactFooter: React.FC = () => {
 
           {/* Contact Actions */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
-            <a
-              href="https://wa.me/919257213228?text=Hi%20Rosaebrew,%20I%20would%20like%20to%20start%20a%20website%20project."
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={onOpenProjectModal}
               className="btn-pill-lime"
+              style={{ border: 'none', cursor: 'pointer' }}
             >
-              <span>Chat on WhatsApp (+91 92572 13228)</span>
-              <span>💬</span>
+              <span>Start a Project</span>
+              <span>→</span>
+            </button>
+
+            <a
+              href="mailto:rosaebrew@gmail.com"
+              className="btn-pill-white"
+              style={{ padding: '0.95rem 2rem' }}
+            >
+              <span>Email: rosaebrew@gmail.com</span>
+              <span>✉️</span>
             </a>
           </div>
 
           <div style={{ fontSize: '0.88rem', color: '#888888' }}>
-            ✦ Available for projects locally in Jaipur and remotely worldwide.
+            ✦ Working with owner-led businesses & independent professionals locally and remotely.
           </div>
         </div>
 
@@ -65,11 +77,18 @@ export const ContactFooter: React.FC = () => {
             <span className="font-display" style={{ color: '#FFFFFF', fontSize: '1.1rem', letterSpacing: '-0.02em', marginRight: '0.75rem' }}>
               ROSAEBREW
             </span>
-            <span>Websites for independent businesses and professionals.</span>
+            <span>Websites for independent businesses & professionals.</span>
           </div>
 
-          <div>
-            © {new Date().getFullYear()} Rosaebrew. All rights reserved.
+          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+            <a
+              href="mailto:rosaebrew@gmail.com"
+              style={{ color: '#C3F53C', textDecoration: 'none', fontWeight: 600 }}
+            >
+              rosaebrew@gmail.com
+            </a>
+            <span>•</span>
+            <span>© {new Date().getFullYear()} Rosaebrew</span>
           </div>
         </div>
       </div>
