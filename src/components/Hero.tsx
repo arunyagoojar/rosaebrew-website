@@ -6,41 +6,51 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
   return (
-    <section style={{ paddingTop: '2.5rem', paddingBottom: '5rem', position: 'relative' }}>
+    <section style={{ paddingTop: '2rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
       <div className="container" style={{ textAlign: 'center' }}>
-        {/* Perfectly Centered Display Header with Proportional Sizing & Multiplayer Cursors */}
+        {/* Perfectly Centered Display Header using Responsive Vector SVG */}
         <div
           style={{
             position: 'relative',
-            display: 'inline-block',
-            maxWidth: '1000px',
             width: '100%',
-            margin: '0 auto 2rem auto',
-            textAlign: 'center',
+            maxWidth: '960px',
+            margin: '0 auto 2.5rem auto',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
         >
-          <h1
-            className="font-display"
+          {/* Responsive SVG Wordmark — Guaranteed 100% Centered & Proportional on All Screens */}
+          <svg
+            viewBox="0 0 1000 140"
+            width="100%"
             style={{
-              fontSize: 'clamp(2.8rem, 8.5vw, 7.5rem)',
-              lineHeight: 0.92,
-              color: 'var(--text-dark)',
-              letterSpacing: '-0.04em',
-              userSelect: 'none',
-              textAlign: 'center',
+              display: 'block',
               width: '100%',
-              margin: '0 auto',
+              maxHeight: '140px',
+              overflow: 'visible',
             }}
           >
-            ROSAEBREW
-          </h1>
+            <text
+              x="50%"
+              y="110"
+              textAnchor="middle"
+              fontFamily="'Syne', 'Plus Jakarta Sans', -apple-system, sans-serif"
+              fontWeight="800"
+              fontSize="142"
+              letterSpacing="-5"
+              fill="#121212"
+            >
+              ROSAEBREW
+            </text>
+          </svg>
 
           {/* Cursor Tag 1: Liam (Orange) */}
           <div
             className="cursor-tag cursor-tag-orange"
             style={{
-              top: '-14px',
-              left: '12%',
+              top: '-18px',
+              left: '14%',
             }}
           >
             <span style={{ fontSize: '0.65rem' }}>▲</span>
@@ -51,7 +61,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
           <div
             className="cursor-tag cursor-tag-green"
             style={{
-              bottom: '-8px',
+              bottom: '-12px',
               left: '8%',
             }}
           >
@@ -63,7 +73,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
           <div
             className="cursor-tag cursor-tag-pink"
             style={{
-              bottom: '-6px',
+              bottom: '-10px',
               right: '10%',
             }}
           >
@@ -75,7 +85,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
           <div
             className="stamp-badge-cyan"
             style={{
-              top: '-25px',
+              top: '-30px',
               right: '2%',
             }}
           >
