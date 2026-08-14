@@ -6,28 +6,28 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
   return (
-    <section style={{ paddingTop: '2.5rem', paddingBottom: '5rem', position: 'relative' }}>
+    <section style={{ paddingTop: '2.5rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
       <div className="container" style={{ textAlign: 'center' }}>
-        {/* Main Display Wordmark & Stamp Badge (Clean, Centered, No Cursors) */}
+        {/* Perfectly Centered Display Header with 5 Orbiting Colored Mouse Pointers */}
         <div
           style={{
             position: 'relative',
             width: '100%',
             maxWidth: '960px',
-            margin: '0 auto 1.75rem auto',
+            margin: '0 auto 2rem auto',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
           }}
         >
-          {/* SVG Heavy Brutalist Wordmark */}
+          {/* Responsive SVG Wordmark — Scales on iPhone, iPad & Desktop */}
           <svg
-            viewBox="0 0 1000 130"
+            viewBox="0 0 1000 135"
             width="100%"
             style={{
               display: 'block',
               width: '100%',
-              maxHeight: '130px',
+              maxHeight: '135px',
               overflow: 'visible',
             }}
           >
@@ -37,7 +37,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
               textAnchor="middle"
               fontFamily="'Syne', 'Plus Jakarta Sans', -apple-system, sans-serif"
               fontWeight="800"
-              fontSize="136"
+              fontSize="134"
               letterSpacing="-4"
               fill="#121212"
             >
@@ -45,15 +45,39 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
             </text>
           </svg>
 
-          {/* Blue Rotating Stamp Badge (Rotated on the Right of the Wordmark) */}
-          <div
-            className="stamp-badge-cyan"
-            style={{
-              top: '-20px',
-              right: '2%',
-            }}
-          >
-            Building<br />for ambitious<br />brands
+          {/* Pointer 1: Orange Pointer */}
+          <div className="floating-pointer pointer-1">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#FF6B00" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Pointer 2: Emerald Green Pointer */}
+          <div className="floating-pointer pointer-2">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#10B981" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Pointer 3: Purple Pointer */}
+          <div className="floating-pointer pointer-3">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#A855F7" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Pointer 4: Cyan Pointer */}
+          <div className="floating-pointer pointer-4">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#06B6D4" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
+            </svg>
+          </div>
+
+          {/* Pointer 5: Amber Pointer */}
+          <div className="floating-pointer pointer-5">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#F59E0B" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
+            </svg>
           </div>
         </div>
 

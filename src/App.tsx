@@ -4,6 +4,7 @@ import { Hero } from './components/Hero';
 import { MascotStatement } from './components/MascotStatement';
 import { CreativePillars } from './components/CreativePillars';
 import { WorksProcess } from './components/WorksProcess';
+import { OurWork } from './components/OurWork';
 import { PricingSection } from './components/PricingSection';
 import { ContactFooter } from './components/ContactFooter';
 import { ProjectInquiryModal } from './components/ProjectInquiryModal';
@@ -20,23 +21,26 @@ export function App() {
       <Header onOpenProjectModal={handleOpenModal} />
 
       <main style={{ flex: 1 }}>
-        {/* 2. Hero Section */}
+        {/* 2. Hero Section (Centered Title + Orbiting Mouse Pointers + Showcase Frame) */}
         <Hero onOpenProjectModal={handleOpenModal} />
 
         {/* 3. Mascot & Statement (Pencil Mascot + Stacked Mini Cards) */}
         <MascotStatement onOpenProjectModal={handleOpenModal} />
 
-        {/* 4. Creative Pillars (3 Tilted Pastel Cards with Exact Icons) */}
+        {/* 4. Creative Pillars (3 Tilted Pastel Cards: Branding, Web & Apps, Marketing) */}
         <CreativePillars onOpenProjectModal={handleOpenModal} />
 
         {/* 5. Works Process (01-02-03 Radar Cards + Rocket Bar) */}
         <WorksProcess />
 
-        {/* 6. Transparent Pricing (Projects start from ₹5,000) */}
+        {/* 6. Our Work & Stats (Kuri, Seri, The Bake Studio + 280+ Stats) */}
+        <OurWork onOpenProjectModal={handleOpenModal} />
+
+        {/* 7. Transparent Pricing (Projects start from ₹5,000) */}
         <PricingSection onOpenProjectModal={handleOpenModal} />
       </main>
 
-      {/* 7. Dark Contact Footer with rosaebrew@gmail.com */}
+      {/* 8. Dark Contact Footer with Direct Email rosaebrew@gmail.com */}
       <ContactFooter onOpenProjectModal={handleOpenModal} />
 
       {/* Project Inquiry Modal */}
