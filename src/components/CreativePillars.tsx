@@ -8,44 +8,48 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
   return (
     <section id="services" style={{ padding: '7rem 0', backgroundColor: 'var(--bg-main)' }}>
       <div className="container">
-        {/* Section Top Header with Inline Badges matching TURN.STUDIO */}
+        {/* Section Top Header with Exact Inline Badges matching TURN.STUDIO */}
         <div style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
-          <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-            A thoughtful, structured approach for independent businesses.
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1rem' }}>
+            An integrated team built to solve for tomorrow's challenge today.
           </div>
 
           <h2
             className="font-display"
             style={{
-              fontSize: 'clamp(2.4rem, 5.5vw, 4.6rem)',
-              lineHeight: 1.1,
+              fontSize: 'clamp(2.5rem, 5.8vw, 4.8rem)',
+              lineHeight: 1.12,
               color: 'var(--text-dark)',
               letterSpacing: '-0.04em',
             }}
           >
             We're a{' '}
-            <span
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '54px',
-                height: '32px',
-                borderRadius: 'var(--radius-pill)',
-                backgroundColor: '#0EA5E9',
-                color: '#FFFFFF',
-                fontSize: '1rem',
-                verticalAlign: 'middle',
-                margin: '0 0.25rem',
-              }}
-            >
-              💻
-            </span>{' '}
-            Creative{' '}
+            {/* Inline Photo Capsule Badge */}
             <span
               style={{
                 display: 'inline-block',
-                fontSize: '1.8rem',
+                width: '68px',
+                height: '38px',
+                borderRadius: 'var(--radius-pill)',
+                overflow: 'hidden',
+                verticalAlign: 'middle',
+                margin: '0 0.35rem',
+                border: '1.5px solid rgba(0,0,0,0.15)',
+                boxShadow: 'var(--shadow-sm)',
+              }}
+            >
+              <img
+                src="/images/thebakestudio_showcase.jpg"
+                alt="Studio Visual"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </span>{' '}
+            Creative{' '}
+            {/* Inline Pencil Doodle */}
+            <span
+              style={{
+                display: 'inline-block',
+                fontSize: '2.2rem',
                 verticalAlign: 'middle',
                 transform: 'rotate(15deg)',
                 margin: '0 0.25rem',
@@ -54,83 +58,115 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
               ✏️
             </span>
             <br />
+            {/* Inline Silhouette Badge */}
             <span
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: '38px',
-                height: '38px',
-                borderRadius: '8px',
+                width: '42px',
+                height: '42px',
+                borderRadius: '10px',
                 backgroundColor: 'var(--text-dark)',
                 color: '#FFFFFF',
-                fontSize: '1.2rem',
+                fontSize: '1.3rem',
                 verticalAlign: 'middle',
-                marginRight: '0.4rem',
+                marginRight: '0.5rem',
               }}
             >
               ✦
             </span>
-            Partner
+            Powerhouse
           </h2>
         </div>
 
-        {/* 3 Tilted Colored Cards with LARGER Icons matching TURN.STUDIO */}
+        {/* 3 Tilted Colored Cards with EXACT Vector Line Icons from TURN.STUDIO */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '2.5rem',
-            maxWidth: '1100px',
+            maxWidth: '1120px',
             margin: '0 auto 4rem auto',
             alignItems: 'stretch',
           }}
         >
-          {/* Card 1: Pastel Blue (Tilted Left) */}
+          {/* Card 1: Pastel Blue (Tilted Left) - Branding */}
           <div className="tilted-card card-tilt-left" style={{ backgroundColor: 'var(--pastel-blue)' }}>
-            <div style={{ fontSize: '3.4rem', marginBottom: '1.25rem', lineHeight: 1 }}>✻</div>
-            <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.65rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
-              Web Design & Build
+            {/* Exact Starburst/Sparkle Asterisk SVG Icon from Image */}
+            <div style={{ marginBottom: '1.5rem', width: '48px', height: '48px' }}>
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
+                <path d="M24 4V44M4 24H44M10 10L38 38M10 38L38 10" stroke="#121212" strokeWidth="3" strokeLinecap="round" />
+                <circle cx="24" cy="24" r="4" fill="#121212" />
+              </svg>
+            </div>
+
+            <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+              Branding
             </h3>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.92rem', color: 'var(--text-dark)', fontWeight: 500 }}>
-              <li>Custom Layout & Typography</li>
-              <li>Mobile-First Responsiveness</li>
-              <li>Fast Page Load Speed</li>
-              <li>Clear Navigation Structure</li>
-              <li>Clean Semantic Code</li>
-              <li>Search & Social Metadata</li>
+
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.7rem', fontSize: '0.94rem', color: 'var(--text-dark)', fontWeight: 500 }}>
+              <li>Go-To-Market Strategy</li>
+              <li>Brand Strategy</li>
+              <li>Visual Identities</li>
+              <li>Brand Guidelines</li>
+              <li>Logo Creation</li>
+              <li>Value Propositions</li>
             </ul>
           </div>
 
-          {/* Card 2: Pastel Green (Tilted Center) */}
+          {/* Card 2: Pastel Green (Tilted Center) - Web & Apps */}
           <div className="tilted-card card-tilt-center" style={{ backgroundColor: 'var(--pastel-green)' }}>
-            <div style={{ fontSize: '3.4rem', marginBottom: '1.25rem', lineHeight: 1 }}>☕</div>
-            <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.65rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
-              Digital Touchpoints
+            {/* Exact Steaming Coffee Cup Line SVG Icon from Image */}
+            <div style={{ marginBottom: '1.5rem', width: '48px', height: '48px' }}>
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
+                {/* Steam Waves */}
+                <path d="M18 10 Q 20 6 18 2" stroke="#121212" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M24 10 Q 26 6 24 2" stroke="#121212" strokeWidth="2.5" strokeLinecap="round" />
+                <path d="M30 10 Q 32 6 30 2" stroke="#121212" strokeWidth="2.5" strokeLinecap="round" />
+                {/* Cup Body */}
+                <path d="M12 14 H36 V28 C36 34 30 38 24 38 C18 38 12 34 12 28 Z" fill="none" stroke="#121212" strokeWidth="3" strokeLinejoin="round" />
+                {/* Handle */}
+                <path d="M36 18 H40 C42.2 18 44 19.8 44 22 C44 24.2 42.2 26 40 26 H36" stroke="#121212" strokeWidth="3" strokeLinecap="round" />
+                {/* Saucer */}
+                <line x1="8" y1="42" x2="40" y2="42" stroke="#121212" strokeWidth="3" strokeLinecap="round" />
+              </svg>
+            </div>
+
+            <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+              Web & Apps
             </h3>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.92rem', color: 'var(--text-dark)', fontWeight: 500 }}>
-              <li>Custom Domain Connection</li>
-              <li>Structured Contact Touchpoints</li>
-              <li>Enquiry & Booking Flows</li>
-              <li>Location & Contact Info</li>
-              <li>Email Routing Setup</li>
-              <li>Consistent Visual Touchpoints</li>
+
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.7rem', fontSize: '0.94rem', color: 'var(--text-dark)', fontWeight: 500 }}>
+              <li>UI/UX Design</li>
+              <li>CMS Implementation</li>
+              <li>Web Design</li>
+              <li>Development</li>
+              <li>Webflow / Custom Code</li>
+              <li>Mobile-First Speed</li>
             </ul>
           </div>
 
-          {/* Card 3: Pastel Peach (Tilted Right) */}
+          {/* Card 3: Pastel Peach (Tilted Right) - Marketing */}
           <div className="tilted-card card-tilt-right" style={{ backgroundColor: 'var(--pastel-peach)' }}>
-            <div style={{ fontSize: '3.4rem', marginBottom: '1.25rem', lineHeight: 1 }}>🌀</div>
-            <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.65rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
-              Content & Direction
+            {/* Exact Swirl / Spiral Line SVG Icon from Image */}
+            <div style={{ marginBottom: '1.5rem', width: '48px', height: '48px' }}>
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
+                <path d="M24 8 C15 8 8 15 8 24 C8 33 15 40 24 40 C33 40 40 33 40 24 C40 17 35 12 28 12 C21 12 16 17 16 24 C16 29 20 32 24 32 C28 32 30 29 30 26" stroke="#121212" strokeWidth="3" strokeLinecap="round" />
+              </svg>
+            </div>
+
+            <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+              Marketing
             </h3>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.92rem', color: 'var(--text-dark)', fontWeight: 500 }}>
-              <li>Service & Product Information</li>
-              <li>Pricing & Scope Transparency</li>
-              <li>Visual Presentation</li>
-              <li>Structured FAQ Hierarchy</li>
-              <li>Clear Client Guidance</li>
-              <li>Direct Project Handoff</li>
+
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.7rem', fontSize: '0.94rem', color: 'var(--text-dark)', fontWeight: 500 }}>
+              <li>Content</li>
+              <li>Social</li>
+              <li>Paid Media</li>
+              <li>Campaigns</li>
+              <li>SEO & Metadata</li>
+              <li>Marketing Ops / Analytics</li>
             </ul>
           </div>
         </div>
@@ -140,7 +176,7 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
           <button
             onClick={onOpenProjectModal}
             className="btn-pill-white"
-            style={{ padding: '0.85rem 2.2rem', fontSize: '0.92rem', border: '1px solid rgba(0,0,0,0.15)', cursor: 'pointer' }}
+            style={{ padding: '0.85rem 2.4rem', fontSize: '0.92rem', border: '1.5px solid rgba(0,0,0,0.15)', cursor: 'pointer' }}
           >
             <span>Let's Connect Today</span>
             <span>→</span>

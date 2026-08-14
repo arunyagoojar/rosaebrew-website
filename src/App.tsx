@@ -20,13 +20,13 @@ export function App() {
       <Header onOpenProjectModal={handleOpenModal} />
 
       <main style={{ flex: 1 }}>
-        {/* 2. Hero Section (Centered Title + Multiplayer Cursors + Showcase Frame) */}
+        {/* 2. Hero Section */}
         <Hero onOpenProjectModal={handleOpenModal} />
 
-        {/* 3. Mascot & Statement */}
-        <MascotStatement />
+        {/* 3. Mascot & Statement (Pencil Mascot + Stacked Mini Cards) */}
+        <MascotStatement onOpenProjectModal={handleOpenModal} />
 
-        {/* 4. Creative Pillars (3 Tilted Pastel Cards with Larger Icons) */}
+        {/* 4. Creative Pillars (3 Tilted Pastel Cards with Exact Icons) */}
         <CreativePillars onOpenProjectModal={handleOpenModal} />
 
         {/* 5. Works Process (01-02-03 Radar Cards + Rocket Bar) */}

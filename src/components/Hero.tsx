@@ -6,86 +6,50 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
   return (
-    <section style={{ paddingTop: '2rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
+    <section style={{ paddingTop: '2.5rem', paddingBottom: '5rem', position: 'relative' }}>
       <div className="container" style={{ textAlign: 'center' }}>
-        {/* Perfectly Centered Display Header using Responsive Vector SVG */}
+        {/* Main Display Wordmark & Stamp Badge (Clean, Centered, No Cursors) */}
         <div
           style={{
             position: 'relative',
             width: '100%',
             maxWidth: '960px',
-            margin: '0 auto 2.5rem auto',
+            margin: '0 auto 1.75rem auto',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
           }}
         >
-          {/* Responsive SVG Wordmark — Guaranteed 100% Centered & Proportional on All Screens */}
+          {/* SVG Heavy Brutalist Wordmark */}
           <svg
-            viewBox="0 0 1000 140"
+            viewBox="0 0 1000 130"
             width="100%"
             style={{
               display: 'block',
               width: '100%',
-              maxHeight: '140px',
+              maxHeight: '130px',
               overflow: 'visible',
             }}
           >
             <text
               x="50%"
-              y="110"
+              y="105"
               textAnchor="middle"
               fontFamily="'Syne', 'Plus Jakarta Sans', -apple-system, sans-serif"
               fontWeight="800"
-              fontSize="142"
-              letterSpacing="-5"
+              fontSize="136"
+              letterSpacing="-4"
               fill="#121212"
             >
-              ROSAEBREW
+              ROSAE.BREW
             </text>
           </svg>
 
-          {/* Cursor Tag 1: Liam (Orange) */}
-          <div
-            className="cursor-tag cursor-tag-orange"
-            style={{
-              top: '-18px',
-              left: '14%',
-            }}
-          >
-            <span style={{ fontSize: '0.65rem' }}>▲</span>
-            <span>Liam</span>
-          </div>
-
-          {/* Cursor Tag 2: Ethan (Green) */}
-          <div
-            className="cursor-tag cursor-tag-green"
-            style={{
-              bottom: '-12px',
-              left: '8%',
-            }}
-          >
-            <span style={{ fontSize: '0.65rem' }}>▲</span>
-            <span>Ethan</span>
-          </div>
-
-          {/* Cursor Tag 3: Noah (Pink) */}
-          <div
-            className="cursor-tag cursor-tag-pink"
-            style={{
-              bottom: '-10px',
-              right: '10%',
-            }}
-          >
-            <span style={{ fontSize: '0.65rem' }}>▲</span>
-            <span>Noah</span>
-          </div>
-
-          {/* Blue Rotating Stamp Badge */}
+          {/* Blue Rotating Stamp Badge (Rotated on the Right of the Wordmark) */}
           <div
             className="stamp-badge-cyan"
             style={{
-              top: '-30px',
+              top: '-20px',
               right: '2%',
             }}
           >
@@ -93,12 +57,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
           </div>
         </div>
 
-        {/* Hero Editorial Subtitle */}
-        <div style={{ maxWidth: '780px', margin: '0 auto 3rem auto' }}>
+        {/* Hero Editorial Subtitle matching TURN.STUDIO */}
+        <div style={{ maxWidth: '820px', margin: '0 auto 3rem auto' }}>
           <p
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(1.3rem, 2.5vw, 2rem)',
+              fontSize: 'clamp(1.4rem, 2.8vw, 2.2rem)',
               color: 'var(--text-dark)',
               fontWeight: 500,
               letterSpacing: '-0.01em',
@@ -109,12 +73,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
           </p>
         </div>
 
-        {/* Showcase Frame */}
+        {/* Giant Showcase Frame */}
         <div
           style={{
             maxWidth: '1080px',
             margin: '0 auto',
-            borderRadius: '28px',
+            borderRadius: '24px',
             overflow: 'hidden',
             backgroundColor: '#1E1E1E',
             border: '2px solid rgba(0, 0, 0, 0.1)',
@@ -211,7 +175,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
             }}
           >
             <span>Rosaebrew • Independent Digital Studio</span>
-            <span>Projects start from ₹5,000 • Direct email: rosaebrew@gmail.com</span>
+            <span>Projects start from ₹5,000 • Email: rosaebrew@gmail.com</span>
           </div>
         </div>
       </div>
