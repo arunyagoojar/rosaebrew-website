@@ -1,4 +1,5 @@
 import React from 'react';
+import showcaseImg from '../assets/showcase.jpg';
 
 interface CreativePillarsProps {
   onOpenProjectModal: () => void;
@@ -18,30 +19,34 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
             className="font-display"
             style={{
               fontSize: 'clamp(2.5rem, 5.8vw, 4.8rem)',
-              lineHeight: 1.12,
+              lineHeight: 1.15,
               color: 'var(--text-dark)',
               letterSpacing: '-0.04em',
             }}
           >
             We're a{' '}
-            {/* Inline Photo Capsule Badge */}
+            {/* Inline Photo Capsule Badge — Guaranteed 100% Visible */}
             <span
               style={{
-                display: 'inline-block',
-                width: '68px',
-                height: '38px',
-                borderRadius: 'var(--radius-pill)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '76px',
+                height: '42px',
+                borderRadius: '9999px',
                 overflow: 'hidden',
                 verticalAlign: 'middle',
                 margin: '0 0.35rem',
-                border: '1.5px solid rgba(0,0,0,0.15)',
-                boxShadow: 'var(--shadow-sm)',
+                border: '2px solid #121212',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                backgroundColor: '#1E293B',
+                position: 'relative',
               }}
             >
               <img
-                src="/images/thebakestudio_showcase.jpg"
+                src={showcaseImg}
                 alt="Studio Visual"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
             </span>{' '}
             Creative{' '}
@@ -98,7 +103,7 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
         >
           {/* Card 1: Pastel Blue (Tilted Left) - Branding */}
           <div className="tilted-card card-tilt-left" style={{ backgroundColor: 'var(--pastel-blue)' }}>
-            {/* Exact Starburst/Sparkle Asterisk SVG Icon from Image */}
+            {/* Starburst/Sparkle Asterisk SVG Icon */}
             <div style={{ marginBottom: '1.5rem', width: '48px', height: '48px' }}>
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
                 <path d="M24 4V44M4 24H44M10 10L38 38M10 38L38 10" stroke="#121212" strokeWidth="3" strokeLinecap="round" />
@@ -122,18 +127,14 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
 
           {/* Card 2: Pastel Green (Tilted Center) - Web & Apps */}
           <div className="tilted-card card-tilt-center" style={{ backgroundColor: 'var(--pastel-green)' }}>
-            {/* Exact Steaming Coffee Cup Line SVG Icon from Image */}
+            {/* Steaming Coffee Cup Line SVG Icon */}
             <div style={{ marginBottom: '1.5rem', width: '48px', height: '48px' }}>
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
-                {/* Steam Waves */}
                 <path d="M18 10 Q 20 6 18 2" stroke="#121212" strokeWidth="2.5" strokeLinecap="round" />
                 <path d="M24 10 Q 26 6 24 2" stroke="#121212" strokeWidth="2.5" strokeLinecap="round" />
                 <path d="M30 10 Q 32 6 30 2" stroke="#121212" strokeWidth="2.5" strokeLinecap="round" />
-                {/* Cup Body */}
                 <path d="M12 14 H36 V28 C36 34 30 38 24 38 C18 38 12 34 12 28 Z" fill="none" stroke="#121212" strokeWidth="3" strokeLinejoin="round" />
-                {/* Handle */}
                 <path d="M36 18 H40 C42.2 18 44 19.8 44 22 C44 24.2 42.2 26 40 26 H36" stroke="#121212" strokeWidth="3" strokeLinecap="round" />
-                {/* Saucer */}
                 <line x1="8" y1="42" x2="40" y2="42" stroke="#121212" strokeWidth="3" strokeLinecap="round" />
               </svg>
             </div>
@@ -154,7 +155,7 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
 
           {/* Card 3: Pastel Peach (Tilted Right) - Marketing */}
           <div className="tilted-card card-tilt-right" style={{ backgroundColor: 'var(--pastel-peach)' }}>
-            {/* Exact Swirl / Spiral Line SVG Icon from Image */}
+            {/* Swirl / Spiral Line SVG Icon */}
             <div style={{ marginBottom: '1.5rem', width: '48px', height: '48px' }}>
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
                 <path d="M24 8 C15 8 8 15 8 24 C8 33 15 40 24 40 C33 40 40 33 40 24 C40 17 35 12 28 12 C21 12 16 17 16 24 C16 29 20 32 24 32 C28 32 30 29 30 26" stroke="#121212" strokeWidth="3" strokeLinecap="round" />
