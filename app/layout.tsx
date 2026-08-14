@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rosaebrew.com"),
+  metadataBase: new URL("https://rosaebrew.eu.cc"),
   title: "RosaeBrew — Digital homes for good cafés",
   description:
     "Websites, menus, digital identity and social content for independent cafés with a point of view. Based in Jaipur, working everywhere.",
+  alternates: { canonical: "/" },
   keywords: ["café website", "digital studio", "Jaipur", "independent café", "branding"],
   openGraph: {
     title: "RosaeBrew — Digital homes for good cafés",
     description: "Websites, menus, digital identity and social content for independent cafés with a point of view.",
-    url: "https://rosaebrew.com",
+    url: "https://rosaebrew.eu.cc",
     siteName: "RosaeBrew",
     type: "website",
   },
