@@ -6,7 +6,44 @@ interface ContactFooterProps {
 
 export const ContactFooter: React.FC<ContactFooterProps> = ({ onOpenProjectModal }) => {
   return (
-    <footer style={{ backgroundColor: 'var(--bg-dark)', color: '#FFFFFF', paddingTop: '5.5rem', paddingBottom: '3.5rem' }}>
+    <footer style={{ backgroundColor: 'var(--bg-dark)', color: '#FFFFFF', paddingTop: '6rem', paddingBottom: '4rem', position: 'relative', overflow: 'hidden' }}>
+      {/* Floating Mouse Pointers in Dark Footer Background Empty Spaces */}
+      <div className="butterfly-pointer" style={{ top: '15%', left: '8%', animation: 'butterflyFloat1 6.5s ease-in-out infinite' }}>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#C3F53C" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ top: '22%', right: '10%', animation: 'butterflyFloat3 7.2s ease-in-out infinite' }}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#38BDF8" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ top: '55%', left: '5%', animation: 'butterflyFloat5 6s ease-in-out infinite' }}>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#F43F5E" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ top: '60%', right: '6%', animation: 'butterflyFloat2 6.8s ease-in-out infinite' }}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#A855F7" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ bottom: '15%', left: '15%', animation: 'butterflyFloat4 7.5s ease-in-out infinite' }}>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#FBBF24" stroke="#121212" strokeWidth="1" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ bottom: '18%', right: '16%', animation: 'butterflyFloat6 6.2s ease-in-out infinite' }}>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#10B981" stroke="#121212" strokeWidth="1" strokeLinejoin="round" />
+        </svg>
+      </div>
+
       <div className="container">
         {/* Contact Block */}
         <div

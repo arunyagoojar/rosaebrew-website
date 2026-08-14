@@ -6,13 +6,38 @@ interface PricingSectionProps {
 
 export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenProjectModal }) => {
   return (
-    <section id="pricing" style={{ padding: '5.5rem 0', backgroundColor: '#FFFFFF', borderTop: '1px solid var(--border-light)' }}>
+    <section id="pricing" style={{ padding: '6rem 0', backgroundColor: '#FFFFFF', borderTop: '1px solid var(--border-light)', position: 'relative', overflow: 'hidden' }}>
+      {/* Floating Pointers in Empty Canvas Margins */}
+      <div className="butterfly-pointer" style={{ top: '12%', left: '6%', animation: 'butterflyFloat2 6.5s ease-in-out infinite' }}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#10B981" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ top: '18%', right: '8%', animation: 'butterflyFloat4 5.8s ease-in-out infinite' }}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#A855F7" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ bottom: '15%', left: '9%', animation: 'butterflyFloat1 7.2s ease-in-out infinite' }}>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#FF6B00" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ bottom: '20%', right: '7%', animation: 'butterflyFloat3 6.6s ease-in-out infinite' }}>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#06B6D4" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
+        </svg>
+      </div>
+
       <div className="container-narrow">
-        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
           <h2
             style={{
               fontFamily: 'var(--font-sans)',
-              fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)',
+              fontSize: 'clamp(2rem, 3.8vw, 2.8rem)',
               fontWeight: 800,
               color: 'var(--text-dark)',
               letterSpacing: '-0.03em',
@@ -31,7 +56,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenProjectMod
           style={{
             backgroundColor: '#FAFAFA',
             borderRadius: '24px',
-            padding: '3rem 2.5rem',
+            padding: '3.5rem 2.5rem',
             border: '1.5px solid var(--border-light)',
             boxShadow: 'var(--shadow-sm)',
             textAlign: 'center',
@@ -55,14 +80,14 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenProjectMod
             Projects start from ₹5,000
           </div>
 
-          <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.65, maxWidth: '580px', margin: '0 auto 2rem auto' }}>
+          <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.65, maxWidth: '580px', margin: '0 auto 2.25rem auto' }}>
             Every project begins with a clear scope discussion. We provide an exact, upfront quotation based on your specific requirements before any work begins.
           </p>
 
           <button
             onClick={onOpenProjectModal}
             className="btn-pill-black"
-            style={{ padding: '0.85rem 2rem', border: 'none', cursor: 'pointer' }}
+            style={{ padding: '0.9rem 2.2rem', border: 'none', cursor: 'pointer' }}
           >
             <span>Request a Project Quote</span>
             <span>→</span>

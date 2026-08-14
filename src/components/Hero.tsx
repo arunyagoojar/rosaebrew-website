@@ -7,8 +7,69 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
   return (
     <section style={{ paddingTop: '16rem', paddingBottom: '6rem', position: 'relative', overflow: 'hidden' }}>
+      {/* Pointers in Empty Canvas Background Margins */}
+      <div className="butterfly-pointer" style={{ top: '8%', left: '5%', animation: 'butterflyFloat1 5s ease-in-out infinite' }}>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#FF6B00" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ top: '10%', right: '6%', animation: 'butterflyFloat3 5.8s ease-in-out infinite' }}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#06B6D4" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ top: '22%', left: '8%', animation: 'butterflyFloat5 6.2s ease-in-out infinite' }}>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#10B981" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ top: '25%', right: '8%', animation: 'butterflyFloat2 6s ease-in-out infinite' }}>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#A855F7" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ top: '35%', left: '12%', animation: 'butterflyFloat4 6.8s ease-in-out infinite' }}>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#F59E0B" stroke="#121212" strokeWidth="1" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ top: '38%', right: '11%', animation: 'butterflyFloat6 6.5s ease-in-out infinite' }}>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#EC4899" stroke="#121212" strokeWidth="1" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ top: '48%', left: '4%', animation: 'butterflyFloat1 7.2s ease-in-out infinite' }}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#6366F1" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ top: '50%', right: '4%', animation: 'butterflyFloat3 6.9s ease-in-out infinite' }}>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#84CC16" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ bottom: '15%', left: '6%', animation: 'butterflyFloat5 6s ease-in-out infinite' }}>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#EF4444" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="butterfly-pointer" style={{ bottom: '12%', right: '5%', animation: 'butterflyFloat2 7.4s ease-in-out infinite' }}>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#38BDF8" stroke="#121212" strokeWidth="1" strokeLinejoin="round" />
+        </svg>
+      </div>
+
       <div className="container" style={{ textAlign: 'center' }}>
-        {/* Perfectly Centered Wordmark with Generous Breathing Space & Butterfly Depth Pointers */}
+        {/* Perfectly Centered Wordmark with Depth Pointers */}
         <div
           style={{
             position: 'relative',
@@ -48,11 +109,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
             </text>
           </svg>
 
-          {/* =========================================================
-              BUTTERFLY-LIKE MOUSE POINTERS WITH MULTI-LAYER DEPTH
-              ========================================================= */}
-          
-          {/* 1. Foreground Sharp Pointers */}
+          {/* Butterfly-Like Mouse Pointers Hovering Around Wordmark */}
           <div className="butterfly-pointer bf-pointer-1">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#FF6B00" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
@@ -77,20 +134,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
             </svg>
           </div>
 
-          {/* 2. Midground Fluttering Pointers */}
-          <div className="butterfly-pointer bf-pointer-5">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#F59E0B" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
-            </svg>
-          </div>
-
-          <div className="butterfly-pointer bf-pointer-6">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#EC4899" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
-            </svg>
-          </div>
-
-          {/* 3. Background Tiny Distant Pointers */}
           <div className="butterfly-pointer bf-pointer-7">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#84CC16" stroke="#121212" strokeWidth="1" strokeLinejoin="round" />
@@ -100,31 +143,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
           <div className="butterfly-pointer bf-pointer-8">
             <svg width="9" height="9" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#38BDF8" stroke="#121212" strokeWidth="1" strokeLinejoin="round" />
-            </svg>
-          </div>
-
-          {/* 4. Additional Surrounding Depth Pointers */}
-          <div className="butterfly-pointer bf-pointer-9">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#6366F1" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
-            </svg>
-          </div>
-
-          <div className="butterfly-pointer bf-pointer-10">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#EF4444" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
-            </svg>
-          </div>
-
-          <div className="butterfly-pointer bf-pointer-11">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
-              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#14B8A6" stroke="#121212" strokeWidth="1" strokeLinejoin="round" />
-            </svg>
-          </div>
-
-          <div className="butterfly-pointer bf-pointer-12">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
-              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#F43F5E" stroke="#121212" strokeWidth="1" strokeLinejoin="round" />
             </svg>
           </div>
         </div>
@@ -144,21 +162,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
             We Craft Distinctive Websites, Not Just Pages
           </p>
 
-          {/* Floating Subtitle Pointers */}
-          <div className="butterfly-pointer" style={{ top: '-18px', right: '-10px', animation: 'butterflyFloat3 6s ease-in-out infinite' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+          <div className="butterfly-pointer" style={{ top: '-18px', right: '-25px', animation: 'butterflyFloat3 6s ease-in-out infinite' }}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#A855F7" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
             </svg>
           </div>
 
-          <div className="butterfly-pointer" style={{ bottom: '-24px', left: '-5px', animation: 'butterflyFloat5 5.5s ease-in-out infinite' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+          <div className="butterfly-pointer" style={{ bottom: '-24px', left: '-20px', animation: 'butterflyFloat5 5.5s ease-in-out infinite' }}>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#10B981" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
             </svg>
           </div>
         </div>
 
-        {/* Giant Showcase Frame */}
+        {/* Giant Showcase Frame — Clean, No Pointers Inside The Block */}
         <div
           style={{
             maxWidth: '1080px',
@@ -171,13 +188,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
             position: 'relative',
           }}
         >
-          {/* Showcase Frame Floating Pointer */}
-          <div className="butterfly-pointer" style={{ top: '16px', right: '24px', animation: 'butterflyFloat1 7s ease-in-out infinite', zIndex: 30 }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#38BDF8" stroke="#FFFFFF" strokeWidth="1.5" strokeLinejoin="round" />
-            </svg>
-          </div>
-
           {/* Internal Showcase Layout */}
           <div
             style={{
