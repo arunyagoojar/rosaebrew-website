@@ -27,6 +27,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
   const [notes, setNotes] = useState('');
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
   const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const handleBackWithAnimation = () => {
     setIsExiting(true);
@@ -97,29 +98,39 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
 
   const currentTierData = tiers.find((t) => t.id === selectedTier) || tiers[1];
 
+  const attachmentsList = uploadedFiles.length > 0
+    ? `\n• Reference Assets (${uploadedFiles.length}):\n` + uploadedFiles.map((f) => `  - ${f.name} (${f.size})`).join('\n')
+    : '';
+
+  const plainTextBrief = 
+    `Hello RoséBrew Team,\n\n` +
+    `Here are my project details:\n\n` +
+    `• Client Name: ${name || 'Independent Creator'}\n` +
+    `• Email: ${email}\n` +
+    `• Brand / Studio Name: ${brandName || 'Not specified'}\n` +
+    `• Business / Practice: ${businessType || 'Not specified'}\n` +
+    `• Selected Tier: ${currentTierData.name} (${currentTierData.price})\n` +
+    `• Desired Timeline: ${timeline}\n` +
+    `• Project Vision & Notes:\n${notes || 'Ready to review on alignment call'}\n` +
+    `${attachmentsList}\n\n` +
+    `Looking forward to collaborating with RoséBrew!`;
+
+  const mailtoUrl = `mailto:rosaebrew@gmail.com?subject=${encodeURIComponent(`Project Brief: ${brandName || name} — ${currentTierData.name}`)}&body=${encodeURIComponent(plainTextBrief)}`;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const attachmentsList = uploadedFiles.length > 0
-      ? `\n• Reference Assets (${uploadedFiles.length}):\n` + uploadedFiles.map((f) => `  - ${f.name} (${f.size})`).join('\n')
-      : '';
-
-    const subject = encodeURIComponent(`Project Brief: ${brandName || name} — ${currentTierData.name}`);
-    const body = encodeURIComponent(
-      `Hello RoséBrew Team,\n\n` +
-        `Here are my project details:\n\n` +
-        `• Client Name: ${name}\n` +
-        `• Email: ${email}\n` +
-        `• Brand / Studio Name: ${brandName || 'Not specified'}\n` +
-        `• Business / Practice: ${businessType || 'Not specified'}\n` +
-        `• Selected Tier: ${currentTierData.name} (${currentTierData.price})\n` +
-        `• Desired Timeline: ${timeline}\n` +
-        `• Project Vision & Notes:\n${notes || 'Ready to review on alignment call'}\n` +
-        `${attachmentsList}\n\n` +
-        `Looking forward to collaborating with RoséBrew!`
-    );
-
-    window.open(`mailto:rosaebrew@gmail.com?subject=${subject}&body=${body}`, '_blank');
     setSubmitted(true);
+    try {
+      window.location.href = mailtoUrl;
+    } catch {
+      // Handled gracefully by UI buttons
+    }
+  };
+
+  const handleCopyBrief = () => {
+    navigator.clipboard.writeText(plainTextBrief);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
   };
 
   return (
@@ -140,7 +151,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
       </div>
 
       {/* =================================================================
-          DEDICATED PAGE HEADER
+          DEDICATED PAGE HEADER (Logo on Left, Back to Home on Right)
           ================================================================= */}
       <header
         style={{
@@ -191,15 +202,15 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
         <div className="container">
           
           {submitted ? (
-            /* Celebration Completion View */
+            /* Celebration Completion View with Guaranteed Email & Copy Triggers */
             <div
               className="celebration-view"
               style={{
-                maxWidth: '640px',
-                margin: '3rem auto',
+                maxWidth: '660px',
+                margin: '2rem auto',
                 backgroundColor: 'var(--bg-card)',
                 borderRadius: '32px',
-                padding: 'clamp(2.5rem, 5vw, 4rem)',
+                padding: 'clamp(2.5rem, 5vw, 3.75rem)',
                 textAlign: 'center',
                 border: '1px solid var(--border-subtle)',
                 boxShadow: 'var(--shadow-float)',
@@ -215,20 +226,61 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
               </div>
 
               <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
-                Inquiry formatted & dispatched!
+                Your project brief is ready!
               </h2>
 
-              <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.6, marginBottom: '2.5rem' }}>
-                Your project brief has been formatted for <strong>rosaebrew@gmail.com</strong>. We will review your goals and schedule our kickoff alignment call.
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.96rem', lineHeight: 1.6, marginBottom: '2rem' }}>
+                Click below to open your mail app directly, or copy the formatted project brief to send to <strong>rosaebrew@gmail.com</strong>.
               </p>
+
+              {/* Action Buttons Group */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', maxWidth: '420px', margin: '0 auto 2rem auto' }}>
+                
+                {/* 1. Direct Email Link Action */}
+                <a
+                  href={mailtoUrl}
+                  className="sivoro-btn-dark"
+                  style={{
+                    height: '48px',
+                    justifyContent: 'center',
+                    fontSize: '0.94rem',
+                    textDecoration: 'none',
+                    width: '100%',
+                  }}
+                >
+                  <span>Open Email App (rosaebrew@gmail.com)</span>
+                  <span>→</span>
+                </a>
+
+                {/* 2. Copy to Clipboard Button */}
+                <button
+                  type="button"
+                  onClick={handleCopyBrief}
+                  className="sivoro-btn-light"
+                  style={{
+                    height: '44px',
+                    justifyContent: 'center',
+                    fontSize: '0.88rem',
+                    width: '100%',
+                    borderColor: copied ? '#86EFAC' : 'var(--border-medium)',
+                  }}
+                >
+                  <span>{copied ? '✓ Brief Copied to Clipboard!' : '📋 Copy Formatted Brief'}</span>
+                </button>
+              </div>
 
               <button
                 onClick={handleBackWithAnimation}
-                className="sivoro-btn-dark"
-                style={{ width: '100%', height: '48px', justifyContent: 'center', fontSize: '0.96rem' }}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: 'var(--text-muted)',
+                  fontSize: '0.86rem',
+                  cursor: 'pointer',
+                  textDecoration: 'underline',
+                }}
               >
-                <span>Return to Studio Overview</span>
-                <span>→</span>
+                ← Return to Studio Overview
               </button>
             </div>
           ) : (
@@ -615,7 +667,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
                       boxShadow: '0 10px 24px rgba(0,0,0,0.18)',
                     }}
                   >
-                    <span>Dispatch Project Brief to Studio</span>
+                    <span>Prepare & Dispatch Project Brief</span>
                     <span>→</span>
                   </button>
 
