@@ -27,6 +27,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
   const [businessType, setBusinessType] = useState('');
   const [notes, setNotes] = useState('');
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
+  const [honeypot, setHoneypot] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const handleBackWithAnimation = () => {
@@ -100,6 +101,13 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Anti-Spam Bot Trap: If honeypot is filled, silently discard without notifying the bot
+    if (honeypot.trim().length > 0) {
+      setSubmitted(true);
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -110,16 +118,19 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
           'Accept': 'application/json',
         },
         body: JSON.stringify({
-          Name: name,
-          Email: email,
-          BrandName: brandName || 'N/A',
-          BusinessType: businessType || 'N/A',
-          ProjectScope: `${currentTierData.name} (${currentTierData.price})`,
-          Timeline: timeline,
-          NotesAndVision: notes || 'None provided',
-          ReferenceFilesAttached: uploadedFiles.length > 0 ? uploadedFiles.map((f) => `${f.name} (${f.size})`).join(', ') : 'None',
-          _subject: `New Project Request from ${name} (${brandName || businessType || 'Independent Brand'})`,
+          'Client Name': name,
+          'Contact Email': email,
+          'Brand / Studio': brandName || 'Not specified',
+          'Industry / Craft': businessType || 'Not specified',
+          'Selected Tier': `${currentTierData.name} — ${currentTierData.price}`,
+          'Target Timeline': timeline,
+          'Project Requirements & Vision': notes || 'Ready for alignment kickoff',
+          'Attached Reference Assets': uploadedFiles.length > 0 ? uploadedFiles.map((f) => `${f.name} (${f.size})`).join(', ') : 'None',
+          _subject: `New Project Request from ${name}${brandName ? ` (${brandName})` : ''} — ${currentTierData.name}`,
+          _replyto: email,
+          _honey: honeypot,
           _template: 'table',
+          _captcha: 'false',
         }),
       });
     } catch (err) {
@@ -340,6 +351,17 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
                 }}
               >
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                  {/* Invisible Honeypot Anti-Spam Field */}
+                  <input
+                    type="text"
+                    name="_honey"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    style={{ display: 'none', position: 'absolute', opacity: 0, pointerEvents: 'none' }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
                   
                   {/* STEP 1: INTERACTIVE SCOPE SELECTOR CARDS */}
                   <div>
