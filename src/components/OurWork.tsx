@@ -40,8 +40,8 @@ export const OurWork: React.FC<OurWorkProps> = ({ onOpenProjectModal }) => {
   return (
     <section id="work" style={{ backgroundColor: 'var(--bg-dark)', color: '#FFFFFF', padding: '6.5rem 0 6rem 0' }}>
       <div className="container">
-        {/* Section Header with Clean SVG Icon */}
-        <div style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
+        {/* Section Header with Clean SVG Icon & Scroll Reveal */}
+        <div className="scroll-reveal" style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
           <h2
             className="font-display"
             style={{
@@ -62,139 +62,150 @@ export const OurWork: React.FC<OurWorkProps> = ({ onOpenProjectModal }) => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 width: '52px',
-                height: '42px',
+                height: '52px',
                 borderRadius: '12px',
-                backgroundColor: '#F43F5E',
-                color: '#FFFFFF',
-                boxShadow: '0 8px 20px rgba(244, 63, 94, 0.4)',
+                backgroundColor: '#1E1E1E',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
               }}
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9" stroke="#C3F53C" strokeWidth="2" />
+                <path d="M12 7V12L15 15" stroke="#C3F53C" strokeWidth="2" strokeLinecap="round" />
               </svg>
             </span>
           </h2>
-          <p style={{ color: '#999999', fontSize: '1.05rem', marginTop: '0.75rem', maxWidth: '600px', margin: '0.75rem auto 0 auto' }}>
-            Selected live projects built for independent brands and owner-led businesses.
+          <p style={{ color: '#AAAAAA', fontSize: '1.05rem', marginTop: '0.75rem', maxWidth: '600px', margin: '0.75rem auto 0 auto' }}>
+            A selection of live client websites and active digital systems built for independent owners.
           </p>
         </div>
 
-        {/* Work Grid */}
+        {/* 3 Real Project Cards with Staggered Scroll Reveal Animations */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             gap: '2.5rem',
+            marginBottom: '4.5rem',
           }}
         >
-          {projects.map((proj, idx) => (
-            <div key={idx} className="work-card">
-              {/* Card Header */}
+          {projects.map((project, idx) => (
+            <div
+              key={idx}
+              className={`scroll-reveal stagger-${idx + 1} work-card`}
+            >
+              {/* Card Banner Preview */}
               <div
                 style={{
-                  backgroundColor: '#1A1A1A',
-                  padding: '2.5rem 2rem',
-                  borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  minHeight: '200px',
-                  position: 'relative',
-                  backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
+                  height: '210px',
+                  backgroundColor: '#141414',
+                  backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px)',
                   backgroundSize: '16px 16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '2rem',
+                  position: 'relative',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span
-                    style={{
-                      fontSize: '0.72rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.1em',
-                      color: proj.tagColor,
-                      textTransform: 'uppercase',
-                      padding: '4px 10px',
-                      backgroundColor: 'rgba(255, 255, 255, 0.06)',
-                      borderRadius: '9999px',
-                    }}
-                  >
-                    {proj.tag}
-                  </span>
-                  <span style={{ fontSize: '0.8rem', color: '#666666' }}>0{idx + 1}</span>
+                {/* Active Tag */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '1rem',
+                    left: '1rem',
+                    backgroundColor: 'rgba(0, 0, 0, 0.65)',
+                    backdropFilter: 'blur(6px)',
+                    border: `1px solid ${project.tagColor}`,
+                    color: project.tagColor,
+                    fontSize: '0.72rem',
+                    fontWeight: 800,
+                    letterSpacing: '0.08em',
+                    padding: '0.35rem 0.75rem',
+                    borderRadius: '9999px',
+                  }}
+                >
+                  ● {project.tag}
                 </div>
 
-                <div>
-                  <h3 style={{ fontSize: '2rem', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.03em', lineHeight: 1.1 }}>
-                    {proj.title}
-                  </h3>
-                  {proj.subtitle && (
-                    <div style={{ fontSize: '0.92rem', color: '#888888', marginTop: '0.2rem' }}>
-                      {proj.subtitle}
+                {/* Main Stylized Project Title */}
+                <div style={{ textAlign: 'center' }}>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '2.5rem',
+                      fontWeight: 700,
+                      color: '#FFFFFF',
+                      letterSpacing: '-0.02em',
+                    }}
+                  >
+                    {project.title}
+                  </div>
+                  {project.subtitle && (
+                    <div style={{ fontSize: '0.85rem', color: '#94A3B8', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                      {project.subtitle}
                     </div>
                   )}
                 </div>
               </div>
 
               {/* Card Body */}
-              <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                <div style={{ fontSize: '0.82rem', fontWeight: 600, color: '#AAAAAA', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.75rem' }}>
-                  {proj.category}
+              <div style={{ padding: '2.25rem 2rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <div style={{ fontSize: '0.82rem', color: project.tagColor, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.5rem' }}>
+                  {project.category}
                 </div>
 
-                <p style={{ fontSize: '0.94rem', color: '#CCCCCC', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                  {proj.desc}
+                <p style={{ color: '#AAAAAA', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '1.75rem' }}>
+                  {project.desc}
                 </p>
 
-                {/* Highlights */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: 'auto', marginBottom: '2rem' }}>
-                  {proj.highlights.map((h, hIdx) => (
+                {/* Highlight Badges */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem', marginTop: 'auto' }}>
+                  {project.highlights.map((item, i) => (
                     <span
-                      key={hIdx}
+                      key={i}
                       style={{
-                        fontSize: '0.76rem',
-                        padding: '4px 9px',
-                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                        fontSize: '0.75rem',
+                        padding: '0.3rem 0.7rem',
+                        backgroundColor: 'rgba(255, 255, 255, 0.06)',
                         borderRadius: '6px',
-                        color: '#94A3B8',
+                        color: '#DDDDDD',
                         border: '1px solid rgba(255, 255, 255, 0.08)',
                       }}
                     >
-                      {h}
+                      {item}
                     </span>
                   ))}
                 </div>
 
-                {/* Dual Buttons: Visit Live Site & Start Project */}
-                <div style={{ display: 'flex', gap: '0.75rem', flexDirection: 'column' }}>
+                {/* Actions */}
+                <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
                   <a
-                    href={proj.url}
+                    href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-pill-lime"
-                    style={{
-                      width: '100%',
-                      padding: '0.75rem',
-                      fontSize: '0.86rem',
-                      textAlign: 'center',
-                      textDecoration: 'none',
-                    }}
+                    style={{ flex: 1, fontSize: '0.84rem', padding: '0.65rem 1rem', textDecoration: 'none', textAlign: 'center' }}
                   >
                     <span>Visit Live Site</span>
                     <span>↗</span>
                   </a>
-
-                  <button
-                    onClick={onOpenProjectModal}
-                    className="btn-pill-white"
-                    style={{ width: '100%', padding: '0.7rem', fontSize: '0.84rem', cursor: 'pointer' }}
-                  >
-                    <span>Discuss Similar Project</span>
-                  </button>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Bottom CTA Block */}
+        <div className="scroll-reveal stagger-2" style={{ textAlign: 'center' }}>
+          <button
+            onClick={onOpenProjectModal}
+            className="btn-pill-white"
+            style={{ padding: '0.85rem 2.2rem', fontSize: '0.92rem', cursor: 'pointer' }}
+          >
+            <span>Discuss Your Project With Us</span>
+            <span>→</span>
+          </button>
         </div>
       </div>
     </section>

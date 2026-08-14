@@ -8,8 +8,8 @@ export const MascotStatement: React.FC<MascotStatementProps> = ({ onOpenProjectM
   return (
     <section style={{ padding: '6rem 0', backgroundColor: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.06)', borderBottom: '1px solid rgba(0,0,0,0.06)', position: 'relative', overflow: 'hidden' }}>
       <div className="container-narrow" style={{ textAlign: 'center' }}>
-        {/* Exact Illustrated Pencil-Carrying Mascot Vector from TURN.STUDIO */}
-        <div style={{ marginBottom: '2.5rem', display: 'flex', justifyContent: 'center' }}>
+        {/* Exact Illustrated Pencil-Carrying Mascot Vector with Smooth Scale Reveal */}
+        <div className="scroll-reveal-scale" style={{ marginBottom: '2.5rem', display: 'flex', justifyContent: 'center' }}>
           <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'visible' }}>
             {/* Giant Striped Stylus / Pencil */}
             <g transform="rotate(-38 60 50)">
@@ -52,23 +52,25 @@ export const MascotStatement: React.FC<MascotStatementProps> = ({ onOpenProjectM
           </svg>
         </div>
 
-        {/* Primary Headline matching TURN.STUDIO */}
-        <h2
-          style={{
-            fontFamily: 'var(--font-sans)',
-            fontSize: 'clamp(2rem, 4.2vw, 3.2rem)',
-            fontWeight: 800,
-            color: 'var(--text-dark)',
-            lineHeight: 1.18,
-            letterSpacing: '-0.03em',
-            marginBottom: '1.75rem',
-          }}
-        >
-          We're a digital-first design studio where creativity meets technology.
-        </h2>
+        {/* Primary Headline with Smooth Scroll Reveal */}
+        <div className="scroll-reveal stagger-1">
+          <h2
+            style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'clamp(2rem, 4.2vw, 3.2rem)',
+              fontWeight: 800,
+              color: 'var(--text-dark)',
+              lineHeight: 1.18,
+              letterSpacing: '-0.03em',
+              marginBottom: '1.75rem',
+            }}
+          >
+            We're a digital-first design studio where creativity meets technology.
+          </h2>
+        </div>
 
         {/* Highlighted Statement with Mini Stacked Cards */}
-        <div style={{ maxWidth: '780px', margin: '0 auto 2.5rem auto' }}>
+        <div className="scroll-reveal stagger-2" style={{ maxWidth: '780px', margin: '0 auto 2.5rem auto' }}>
           <p
             style={{
               fontFamily: 'var(--font-serif)',
@@ -95,7 +97,7 @@ export const MascotStatement: React.FC<MascotStatementProps> = ({ onOpenProjectM
         </div>
 
         {/* Action Button */}
-        <div>
+        <div className="scroll-reveal stagger-3">
           <button
             onClick={onOpenProjectModal}
             className="btn-pill-white"

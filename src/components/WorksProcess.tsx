@@ -54,8 +54,8 @@ export const WorksProcess: React.FC = () => {
   return (
     <section ref={sectionRef} style={{ padding: '7rem 0', backgroundColor: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
       <div className="container">
-        {/* Headline matching TURN.STUDIO */}
-        <div style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
+        {/* Headline matching TURN.STUDIO with Scroll Reveal */}
+        <div className="scroll-reveal" style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
           <h2
             className="font-display"
             style={{
@@ -71,7 +71,7 @@ export const WorksProcess: React.FC = () => {
           </p>
         </div>
 
-        {/* 3 Process Cards with MUCH BIGGER Vector Geometry Diagrams */}
+        {/* 3 Process Cards with Staggered Scroll Reveal Animations */}
         <div
           style={{
             display: 'grid',
@@ -82,7 +82,7 @@ export const WorksProcess: React.FC = () => {
           }}
         >
           {/* Card 01: Discover & Define */}
-          <div className="process-card" style={{ padding: '3rem 2.25rem' }}>
+          <div className="scroll-reveal stagger-1 process-card" style={{ padding: '3rem 2.25rem' }}>
             <div style={{ fontSize: '0.78rem', fontWeight: 800, color: 'var(--text-light)', marginBottom: '0.75rem', letterSpacing: '0.1em' }}>
               01
             </div>
@@ -113,7 +113,7 @@ export const WorksProcess: React.FC = () => {
           </div>
 
           {/* Card 02: Design & Build */}
-          <div className="process-card" style={{ padding: '3rem 2.25rem' }}>
+          <div className="scroll-reveal stagger-2 process-card" style={{ padding: '3rem 2.25rem' }}>
             <div style={{ fontSize: '0.78rem', fontWeight: 800, color: 'var(--text-light)', marginBottom: '0.75rem', letterSpacing: '0.1em' }}>
               02
             </div>
@@ -147,7 +147,7 @@ export const WorksProcess: React.FC = () => {
           </div>
 
           {/* Card 03: Launch & Grow */}
-          <div className="process-card" style={{ padding: '3rem 2.25rem' }}>
+          <div className="scroll-reveal stagger-3 process-card" style={{ padding: '3rem 2.25rem' }}>
             <div style={{ fontSize: '0.78rem', fontWeight: 800, color: 'var(--text-light)', marginBottom: '0.75rem', letterSpacing: '0.1em' }}>
               03
             </div>
@@ -177,7 +177,7 @@ export const WorksProcess: React.FC = () => {
         </div>
 
         {/* Ultra-Smooth 60FPS Lerping Rocket Progress Bar */}
-        <div className="rocket-bar-container">
+        <div className="scroll-reveal stagger-2 rocket-bar-container">
           <div
             ref={fillRef}
             className="rocket-bar-fill"

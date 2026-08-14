@@ -8,8 +8,9 @@ export const ContactFooter: React.FC<ContactFooterProps> = ({ onOpenProjectModal
   return (
     <footer style={{ backgroundColor: 'var(--bg-dark)', color: '#FFFFFF', paddingTop: '6rem', paddingBottom: '4rem', position: 'relative' }}>
       <div className="container">
-        {/* Contact Block */}
+        {/* Contact Block with Scroll Reveal */}
         <div
+          className="scroll-reveal"
           style={{
             maxWidth: '780px',
             margin: '0 auto 5rem auto',

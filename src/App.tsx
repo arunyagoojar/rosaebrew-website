@@ -8,20 +8,25 @@ import { OurWork } from './components/OurWork';
 import { PricingSection } from './components/PricingSection';
 import { ContactFooter } from './components/ContactFooter';
 import { ProjectInquiryModal } from './components/ProjectInquiryModal';
+import { useScrollReveal } from './hooks/useScrollReveal';
 
 export function App() {
   const [modalOpen, setModalOpen] = useState(false);
+  useScrollReveal();
 
   const handleOpenModal = () => setModalOpen(true);
   const handleCloseModal = () => setModalOpen(false);
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'var(--bg-main)' }}>
-      {/* 1. Header with Start Project Trigger */}
+      {/* Viewport Scroll Progress Line */}
+      <div id="scroll-progress-line" className="scroll-progress-line" style={{ width: '0%' }}></div>
+
+      {/* 1. Header with Scroll Reveal */}
       <Header onOpenProjectModal={handleOpenModal} />
 
       <main style={{ flex: 1 }}>
-        {/* 2. Hero Section (Centered Title + Orbiting Mouse Pointers + Showcase Frame) */}
+        {/* 2. Hero Section (Centered Title + Depth Mouse Pointers + Showcase Frame) */}
         <Hero onOpenProjectModal={handleOpenModal} />
 
         {/* 3. Mascot & Statement (Pencil Mascot + Stacked Mini Cards) */}
@@ -30,10 +35,10 @@ export function App() {
         {/* 4. Creative Pillars (3 Tilted Pastel Cards: Branding, Web & Apps, Marketing) */}
         <CreativePillars onOpenProjectModal={handleOpenModal} />
 
-        {/* 5. Works Process (01-02-03 Radar Cards + Rocket Bar) */}
+        {/* 5. Works Process (01-02-03 Radar Cards + Smooth Rocket Bar) */}
         <WorksProcess />
 
-        {/* 6. Our Work & Stats (Kuri, Seri, The Bake Studio + 280+ Stats) */}
+        {/* 6. Our Work (Akuri, Seri, The Bake Studio) */}
         <OurWork onOpenProjectModal={handleOpenModal} />
 
         {/* 7. Transparent Pricing (Projects start from ₹5,000) */}

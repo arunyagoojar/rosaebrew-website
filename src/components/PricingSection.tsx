@@ -8,7 +8,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenProjectMod
   return (
     <section id="pricing" style={{ padding: '6rem 0', backgroundColor: '#FFFFFF', borderTop: '1px solid var(--border-light)', position: 'relative' }}>
       <div className="container-narrow">
-        <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+        <div className="scroll-reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
           <h2
             style={{
               fontFamily: 'var(--font-sans)',
@@ -26,8 +26,9 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenProjectMod
           </p>
         </div>
 
-        {/* Pricing Card */}
+        {/* Pricing Card with Scroll Scale Reveal */}
         <div
+          className="scroll-reveal-scale stagger-1"
           style={{
             backgroundColor: '#FAFAFA',
             borderRadius: '24px',
@@ -71,6 +72,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenProjectMod
 
         {/* Pricing Notes & Terms */}
         <div
+          className="scroll-reveal stagger-2"
           style={{
             backgroundColor: '#FFFFFF',
             borderRadius: '16px',

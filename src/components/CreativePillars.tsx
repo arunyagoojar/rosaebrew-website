@@ -9,7 +9,7 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
     <section id="services" style={{ padding: '7rem 0', backgroundColor: 'var(--bg-main)' }}>
       <div className="container">
         {/* Section Top Header with Exact Inline Badges matching TURN.STUDIO */}
-        <div style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
+        <div className="scroll-reveal" style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
           <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1rem' }}>
             An integrated team built to solve for tomorrow's challenge today.
           </div>
@@ -42,7 +42,6 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
               }}
             >
               <svg viewBox="0 0 100 54" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', display: 'block' }}>
-                {/* Sky Gradient */}
                 <defs>
                   <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="54" gradientUnits="userSpaceOnUse">
                     <stop offset="0%" stopColor="#1E3A8A" />
@@ -52,9 +51,7 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
                   </linearGradient>
                 </defs>
                 <rect width="100" height="54" fill="url(#skyGrad)" />
-                {/* Glowing Sun */}
                 <circle cx="50" cy="34" r="10" fill="#FEF08A" opacity="0.9" />
-                {/* Mountain Silhouettes */}
                 <polygon points="-5,54 28,32 52,54" fill="#1E293B" opacity="0.85" />
                 <polygon points="35,54 68,26 105,54" fill="#0F172A" />
                 <polygon points="12,54 42,38 72,54" fill="#334155" opacity="0.75" />
@@ -101,7 +98,7 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
           </h2>
         </div>
 
-        {/* 3 Tilted Colored Cards with Vector Line Icons */}
+        {/* 3 Tilted Colored Cards with Staggered Scroll Reveal Animations */}
         <div
           style={{
             display: 'grid',
@@ -113,8 +110,7 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
           }}
         >
           {/* Card 1: Pastel Blue (Tilted Left) - Branding */}
-          <div className="tilted-card card-tilt-left" style={{ backgroundColor: 'var(--pastel-blue)' }}>
-            {/* Starburst/Sparkle Asterisk SVG Icon */}
+          <div className="scroll-reveal stagger-1 tilted-card card-tilt-left" style={{ backgroundColor: 'var(--pastel-blue)' }}>
             <div style={{ marginBottom: '1.5rem', width: '48px', height: '48px' }}>
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
                 <path d="M24 4V44M4 24H44M10 10L38 38M10 38L38 10" stroke="#121212" strokeWidth="3" strokeLinecap="round" />
@@ -137,8 +133,7 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
           </div>
 
           {/* Card 2: Pastel Green (Tilted Center) - Web & Apps */}
-          <div className="tilted-card card-tilt-center" style={{ backgroundColor: 'var(--pastel-green)' }}>
-            {/* Steaming Coffee Cup Line SVG Icon */}
+          <div className="scroll-reveal stagger-2 tilted-card card-tilt-center" style={{ backgroundColor: 'var(--pastel-green)' }}>
             <div style={{ marginBottom: '1.5rem', width: '48px', height: '48px' }}>
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
                 <path d="M18 10 Q 20 6 18 2" stroke="#121212" strokeWidth="2.5" strokeLinecap="round" />
@@ -165,8 +160,7 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
           </div>
 
           {/* Card 3: Pastel Peach (Tilted Right) - Marketing */}
-          <div className="tilted-card card-tilt-right" style={{ backgroundColor: 'var(--pastel-peach)' }}>
-            {/* Swirl / Spiral Line SVG Icon */}
+          <div className="scroll-reveal stagger-3 tilted-card card-tilt-right" style={{ backgroundColor: 'var(--pastel-peach)' }}>
             <div style={{ marginBottom: '1.5rem', width: '48px', height: '48px' }}>
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
                 <path d="M24 8 C15 8 8 15 8 24 C8 33 15 40 24 40 C33 40 40 33 40 24 C40 17 35 12 28 12 C21 12 16 17 16 24 C16 29 20 32 24 32 C28 32 30 29 30 26" stroke="#121212" strokeWidth="3" strokeLinecap="round" />
@@ -189,7 +183,7 @@ export const CreativePillars: React.FC<CreativePillarsProps> = ({ onOpenProjectM
         </div>
 
         {/* Bottom Button */}
-        <div style={{ textAlign: 'center' }}>
+        <div className="scroll-reveal stagger-2" style={{ textAlign: 'center' }}>
           <button
             onClick={onOpenProjectModal}
             className="btn-pill-white"
