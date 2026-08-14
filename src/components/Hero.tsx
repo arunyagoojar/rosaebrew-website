@@ -6,87 +6,90 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
   return (
-    <section style={{ paddingTop: '2.5rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
+    <section style={{ paddingTop: '2rem', paddingBottom: '5rem', position: 'relative', overflow: 'hidden' }}>
       <div className="container" style={{ textAlign: 'center' }}>
-        {/* Perfectly Centered Display Header with 5 Orbiting Colored Mouse Pointers */}
+        {/* Perfectly Centered & 100% Responsive Display Wordmark */}
         <div
           style={{
             position: 'relative',
             width: '100%',
             maxWidth: '960px',
-            margin: '0 auto 2rem auto',
+            margin: '0 auto 2.5rem auto',
+            padding: '0 0.5rem',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
           }}
         >
-          {/* Responsive SVG Wordmark — Scales on iPhone, iPad & Desktop */}
+          {/* 100% Constrained SVG — Guaranteed to never overflow on any mobile or desktop screen */}
           <svg
-            viewBox="0 0 1000 135"
+            viewBox="0 0 1000 130"
             width="100%"
+            height="auto"
             style={{
               display: 'block',
               width: '100%',
-              maxHeight: '135px',
-              overflow: 'visible',
+              maxWidth: '100%',
+              height: 'auto',
             }}
           >
             <text
-              x="50%"
-              y="105"
+              x="500"
+              y="100"
               textAnchor="middle"
+              textLength="920"
+              lengthAdjust="spacingAndGlyphs"
               fontFamily="'Syne', 'Plus Jakarta Sans', -apple-system, sans-serif"
               fontWeight="800"
-              fontSize="134"
-              letterSpacing="-4"
+              fontSize="120"
               fill="#121212"
             >
-              ROSAE.BREW
+              ROSAEBREW
             </text>
           </svg>
 
           {/* Pointer 1: Orange Pointer */}
           <div className="floating-pointer pointer-1">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#FF6B00" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
             </svg>
           </div>
 
           {/* Pointer 2: Emerald Green Pointer */}
           <div className="floating-pointer pointer-2">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#10B981" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
             </svg>
           </div>
 
           {/* Pointer 3: Purple Pointer */}
           <div className="floating-pointer pointer-3">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#A855F7" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
             </svg>
           </div>
 
           {/* Pointer 4: Cyan Pointer */}
           <div className="floating-pointer pointer-4">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#06B6D4" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
             </svg>
           </div>
 
           {/* Pointer 5: Amber Pointer */}
           <div className="floating-pointer pointer-5">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#F59E0B" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
             </svg>
           </div>
         </div>
 
-        {/* Hero Editorial Subtitle matching TURN.STUDIO */}
-        <div style={{ maxWidth: '820px', margin: '0 auto 3rem auto' }}>
+        {/* Hero Editorial Subtitle */}
+        <div style={{ maxWidth: '780px', margin: '0 auto 3rem auto' }}>
           <p
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(1.4rem, 2.8vw, 2.2rem)',
+              fontSize: 'clamp(1.3rem, 2.5vw, 2rem)',
               color: 'var(--text-dark)',
               fontWeight: 500,
               letterSpacing: '-0.01em',

@@ -15,37 +15,31 @@ export const Header: React.FC<HeaderProps> = ({ onOpenProjectModal }) => {
           justifyContent: 'space-between',
         }}
       >
-        {/* Left Action Button */}
+        {/* Left: Brand Logo */}
+        <div>
+          <a
+            href="#"
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <span
+              className="font-display"
+              style={{
+                fontSize: '1.35rem',
+                color: 'var(--text-dark)',
+                letterSpacing: '-0.03em',
+              }}
+            >
+              ROSAEBREW
+            </span>
+          </a>
+        </div>
+
+        {/* Right: Contact Button */}
         <div>
           <button
             onClick={onOpenProjectModal}
             className="btn-pill-white"
-            style={{ fontSize: '0.84rem' }}
-          >
-            <span>Let's Start a Project</span>
-          </button>
-        </div>
-
-        {/* Center Brand Mark */}
-        <div style={{ textAlign: 'center' }}>
-          <span
-            className="font-display"
-            style={{
-              fontSize: '1.25rem',
-              color: 'var(--text-dark)',
-              letterSpacing: '-0.02em',
-            }}
-          >
-            ROSAEBREW
-          </span>
-        </div>
-
-        {/* Right Action Button */}
-        <div>
-          <button
-            onClick={onOpenProjectModal}
-            className="btn-pill-white"
-            style={{ fontSize: '0.84rem' }}
+            style={{ fontSize: '0.86rem', padding: '0.6rem 1.4rem', cursor: 'pointer' }}
           >
             <span>Contact</span>
           </button>
