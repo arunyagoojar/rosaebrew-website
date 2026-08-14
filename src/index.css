@@ -22,6 +22,8 @@
   --pointer-pink: #EC4899;
   --pointer-amber: #F59E0B;
   --pointer-lime: #84CC16;
+  --pointer-red: #EF4444;
+  --pointer-indigo: #6366F1;
 
   /* Text Colors */
   --text-dark: #121212;
@@ -189,9 +191,9 @@ body {
   will-change: transform;
 }
 
-/* Foreground Pointers */
+/* Foreground Sharp Pointers */
 .bf-pointer-1 {
-  top: -24px;
+  top: -28px;
   left: 14%;
   filter: drop-shadow(0 4px 12px rgba(255, 107, 0, 0.35));
   animation: butterflyFloat1 4.8s ease-in-out infinite;
@@ -199,7 +201,7 @@ body {
 }
 
 .bf-pointer-2 {
-  bottom: -22px;
+  bottom: -24px;
   left: 24%;
   filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.35));
   animation: butterflyFloat2 5.6s ease-in-out infinite;
@@ -207,7 +209,7 @@ body {
 }
 
 .bf-pointer-3 {
-  top: -20px;
+  top: -22px;
   right: 22%;
   filter: drop-shadow(0 4px 12px rgba(168, 85, 247, 0.35));
   animation: butterflyFloat3 5.2s ease-in-out infinite;
@@ -215,18 +217,18 @@ body {
 }
 
 .bf-pointer-4 {
-  bottom: -18px;
+  bottom: -20px;
   right: 12%;
   filter: drop-shadow(0 4px 12px rgba(6, 182, 212, 0.35));
   animation: butterflyFloat4 6.2s ease-in-out infinite;
   z-index: 20;
 }
 
-/* Midground / Smaller Depth Pointers */
+/* Midground Smaller Fluttering Pointers */
 .bf-pointer-5 {
   top: 15%;
   left: 3%;
-  opacity: 0.85;
+  opacity: 0.9;
   filter: drop-shadow(0 3px 8px rgba(245, 158, 11, 0.3));
   animation: butterflyFloat5 5.8s ease-in-out infinite;
   z-index: 10;
@@ -235,7 +237,7 @@ body {
 .bf-pointer-6 {
   top: 25%;
   right: 4%;
-  opacity: 0.85;
+  opacity: 0.9;
   filter: drop-shadow(0 3px 8px rgba(236, 72, 153, 0.3));
   animation: butterflyFloat6 5.4s ease-in-out infinite;
   z-index: 10;
@@ -243,21 +245,58 @@ body {
 
 /* Background Tiny Distant Pointers */
 .bf-pointer-7 {
-  top: -38px;
+  top: -46px;
   left: 48%;
-  opacity: 0.65;
+  opacity: 0.7;
   filter: blur(0.4px);
   animation: butterflyFloat2 7s ease-in-out infinite;
   z-index: 5;
 }
 
 .bf-pointer-8 {
-  bottom: -32px;
+  bottom: -38px;
   left: 65%;
-  opacity: 0.65;
+  opacity: 0.7;
   filter: blur(0.4px);
   animation: butterflyFloat4 6.8s ease-in-out infinite;
   z-index: 5;
+}
+
+/* Additional Hero & Section Pointers */
+.bf-pointer-9 {
+  top: 48%;
+  left: 8%;
+  opacity: 0.85;
+  filter: drop-shadow(0 3px 8px rgba(99, 102, 241, 0.3));
+  animation: butterflyFloat3 6.4s ease-in-out infinite;
+  z-index: 15;
+}
+
+.bf-pointer-10 {
+  top: 55%;
+  right: 6%;
+  opacity: 0.85;
+  filter: drop-shadow(0 3px 8px rgba(239, 68, 68, 0.3));
+  animation: butterflyFloat1 5.9s ease-in-out infinite;
+  z-index: 15;
+}
+
+.bf-pointer-11 {
+  bottom: 8%;
+  left: 18%;
+  opacity: 0.75;
+  filter: blur(0.3px);
+  animation: butterflyFloat5 7.2s ease-in-out infinite;
+  z-index: 8;
+}
+
+.bf-pointer-12 {
+  bottom: 12%;
+  right: 20%;
+  opacity: 0.75;
+  filter: blur(0.3px);
+  animation: butterflyFloat6 6.6s ease-in-out infinite;
+  z-index: 8;
 }
 
 @keyframes butterflyFloat1 {
