@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export function useScrollReveal() {
+export function useScrollReveal(dependency?: any) {
   useEffect(() => {
     // 1. Intersection Observer for Scroll Reveals
     const observerCallback: IntersectionObserverCallback = (entries, observer) => {
@@ -14,12 +14,20 @@ export function useScrollReveal() {
 
     const observer = new IntersectionObserver(observerCallback, {
       root: null,
-      rootMargin: '0px 0px -60px 0px',
-      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.05,
     });
 
     const revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-scale');
-    revealElements.forEach((el) => observer.observe(el));
+    revealElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      // If already in view upon mount, immediately reveal
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('is-revealed');
+      } else {
+        observer.observe(el);
+      }
+    });
 
     // 2. Window Scroll Progress Line
     const progressBar = document.getElementById('scroll-progress-line');
@@ -38,5 +46,5 @@ export function useScrollReveal() {
       observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [dependency]);
 }

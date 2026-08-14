@@ -1,4 +1,5 @@
 import React from 'react';
+import { NotionStudioCollab } from './NotionIllustrations';
 
 interface MascotStatementProps {
   onOpenProjectModal?: () => void;
@@ -6,106 +7,66 @@ interface MascotStatementProps {
 
 export const MascotStatement: React.FC<MascotStatementProps> = ({ onOpenProjectModal }) => {
   return (
-    <section style={{ padding: '6rem 0', backgroundColor: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.06)', borderBottom: '1px solid rgba(0,0,0,0.06)', position: 'relative', overflow: 'hidden' }}>
-      <div className="container-narrow" style={{ textAlign: 'center' }}>
-        {/* Exact Illustrated Pencil-Carrying Mascot Vector with Smooth Scale Reveal */}
-        <div className="scroll-reveal-scale" style={{ marginBottom: '2.5rem', display: 'flex', justifyContent: 'center' }}>
-          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ overflow: 'visible' }}>
-            {/* Giant Striped Stylus / Pencil */}
-            <g transform="rotate(-38 60 50)">
-              {/* Pencil Tip */}
-              <polygon points="60,10 50,30 70,30" fill="#FDE68A" stroke="#121212" strokeWidth="2.5" strokeLinejoin="round" />
-              <polygon points="60,10 55,20 65,20" fill="#121212" />
-              
-              {/* Pencil Body with Stripes */}
-              <rect x="50" y="30" width="20" height="60" fill="#F59E0B" stroke="#121212" strokeWidth="2.5" />
-              <line x1="56" y1="30" x2="56" y2="90" stroke="#D97706" strokeWidth="2" />
-              <line x1="64" y1="30" x2="64" y2="90" stroke="#D97706" strokeWidth="2" />
-              
-              {/* Metal Ferrule */}
-              <rect x="50" y="90" width="20" height="10" fill="#CBD5E1" stroke="#121212" strokeWidth="2.5" />
-              <line x1="50" y1="95" x2="70" y2="95" stroke="#94A3B8" strokeWidth="1.5" />
-              
-              {/* Eraser */}
-              <rect x="50" y="100" width="20" height="12" rx="3" fill="#F43F5E" stroke="#121212" strokeWidth="2.5" />
-            </g>
-
-            {/* Walking Character Head & Body */}
-            <circle cx="56" cy="56" r="12" fill="#FED7AA" stroke="#121212" strokeWidth="2.5" />
-            <circle cx="60" cy="54" r="2" fill="#121212" />
-            <path d="M54 58 Q 58 62 62 58" stroke="#121212" strokeWidth="2" fill="none" strokeLinecap="round" />
-            
-            {/* Orange Shirt Body */}
-            <path d="M48 68 C48 65 64 65 64 68 L62 82 L50 82 Z" fill="#FF6B00" stroke="#121212" strokeWidth="2.5" />
-            
-            {/* Cyan Pants Legs */}
-            <line x1="52" y1="82" x2="46" y2="104" stroke="#0EA5E9" strokeWidth="6" strokeLinecap="round" />
-            <line x1="60" y1="82" x2="68" y2="102" stroke="#0EA5E9" strokeWidth="6" strokeLinecap="round" />
-            
-            {/* Black Shoes */}
-            <ellipse cx="43" cy="106" rx="6" ry="3.5" fill="#121212" />
-            <ellipse cx="71" cy="104" rx="6" ry="3.5" fill="#121212" />
-
-            {/* Arm holding the pencil */}
-            <path d="M52 70 Q 56 60 62 64" stroke="#FED7AA" strokeWidth="4" strokeLinecap="round" fill="none" />
-            <circle cx="62" cy="64" r="3.5" fill="#FED7AA" stroke="#121212" strokeWidth="1.5" />
-          </svg>
-        </div>
-
-        {/* Primary Headline with Smooth Scroll Reveal */}
-        <div className="scroll-reveal stagger-1">
-          <h2
-            style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: 'clamp(2rem, 4.2vw, 3.2rem)',
-              fontWeight: 800,
-              color: 'var(--text-dark)',
-              lineHeight: 1.18,
-              letterSpacing: '-0.03em',
-              marginBottom: '1.75rem',
-            }}
-          >
-            We're a digital-first design studio where creativity meets technology.
-          </h2>
-        </div>
-
-        {/* Highlighted Statement with Mini Stacked Cards */}
-        <div className="scroll-reveal stagger-2" style={{ maxWidth: '780px', margin: '0 auto 2.5rem auto' }}>
-          <p
-            style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: 'clamp(1.25rem, 2.4vw, 1.85rem)',
-              color: '#888888',
-              lineHeight: 1.5,
-              fontWeight: 400,
-            }}
-          >
-            We design <strong style={{ color: 'var(--text-dark)', fontWeight: 700 }}>products</strong>,{' '}
-            <strong style={{ color: 'var(--text-dark)', fontWeight: 700 }}>brands</strong>, and{' '}
-            <span style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
-              <strong style={{ color: 'var(--text-dark)', fontWeight: 700, marginRight: '8px' }}>websites</strong>
-              
-              {/* Stack of 3 mini colorful tilted project cards */}
-              <span style={{ display: 'inline-flex', position: 'relative', width: '38px', height: '24px', verticalAlign: 'middle', margin: '0 4px' }}>
-                <span style={{ position: 'absolute', width: '22px', height: '22px', borderRadius: '4px', backgroundColor: '#EF4444', transform: 'rotate(-12deg)', top: '1px', left: '0px', boxShadow: '0 2px 6px rgba(0,0,0,0.2)' }}></span>
-                <span style={{ position: 'absolute', width: '22px', height: '22px', borderRadius: '4px', backgroundColor: '#111111', transform: 'rotate(4deg)', top: '0px', left: '8px', boxShadow: '0 2px 6px rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.2)' }}></span>
-                <span style={{ position: 'absolute', width: '22px', height: '22px', borderRadius: '4px', backgroundColor: '#FDECD2', transform: 'rotate(18deg)', top: '2px', left: '16px', boxShadow: '0 2px 6px rgba(0,0,0,0.15)', border: '1px solid #E5E7EB' }}></span>
+    <section id="about" style={{ padding: '6.5rem 0', backgroundColor: 'var(--bg-canvas)' }}>
+      <div className="container">
+        <div
+          className="scroll-reveal"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '4rem',
+            alignItems: 'center',
+          }}
+        >
+          {/* Left Column: Narrative & Values */}
+          <div>
+            <h2
+              style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)',
+                fontWeight: 700,
+                color: 'var(--text-primary)',
+                lineHeight: 1.18,
+                marginBottom: '1.5rem',
+                letterSpacing: '-0.03em',
+              }}
+            >
+              The philosophy behind our <br />
+              <span className="italic-serif" style={{ fontWeight: 400 }}>
+                studio
               </span>
-            </span>{' '}
-            that people love and help businesses thrive.
-          </p>
-        </div>
+            </h2>
 
-        {/* Action Button */}
-        <div className="scroll-reveal stagger-3">
-          <button
-            onClick={onOpenProjectModal}
-            className="btn-pill-white"
-            style={{ padding: '0.85rem 2.2rem', fontSize: '0.92rem', cursor: 'pointer' }}
+            <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+              We started RoséBrew to help independent culinary creators and design-led businesses build websites that actually reflect the true quality of their craft.
+            </p>
+
+            <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.7, marginBottom: '2.5rem' }}>
+              No generic templates or confusing page builders. Every line of code is written specifically for your brand, loading fast on mobile phones and presenting your work with clean editorial elegance.
+            </p>
+
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <button
+                onClick={onOpenProjectModal}
+                className="sivoro-btn-dark"
+              >
+                <span>Start a Project</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Right Column: 100% Transparent, Big Studio Collaboration Illustration (Zero background box) */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '1rem',
+            }}
           >
-            <span>More About Us</span>
-            <span>→</span>
-          </button>
+            <NotionStudioCollab size="92%" />
+          </div>
         </div>
       </div>
     </section>

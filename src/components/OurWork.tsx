@@ -7,203 +7,230 @@ interface OurWorkProps {
 export const OurWork: React.FC<OurWorkProps> = ({ onOpenProjectModal }) => {
   const projects = [
     {
+      id: 'akuri',
       title: 'Akuri',
-      category: 'Design & Digital Identity',
-      tag: 'ACTIVE PROJECT',
-      tagColor: '#38BDF8',
+      tagline: 'Lifestyle & Architecture Showcase',
+      tag: 'LIFESTYLE & ARCHITECTURE',
+      tagBg: '#E4DCF1',
+      tagColor: '#2B2338',
       url: 'https://akuri.rosaebrew.eu.cc',
-      desc: 'Distinctive brand identity, minimal lifestyle showcase, and custom responsive web experience crafted for modern living.',
-      highlights: ['Custom Typography', 'Mobile-First Experience', 'Frictionless Enquiries'],
+      image: '/images/showcase_akuri.png',
+      desc: 'A minimal, editorial web presence created to present contemporary architectural and lifestyle products with visual clarity and effortless enquiry channels.',
+      highlights: ['Custom Typography', 'Frictionless Inquiries', 'Mobile-First Layout'],
     },
     {
-      title: 'Serí',
-      subtitle: 'The Gourmet Kitchen',
-      category: 'Culinary Brand & Digital Menu',
-      tag: 'ACTIVE PROJECT',
-      tagColor: '#F59E0B',
+      id: 'seri',
+      title: 'Serí Pâtisserie',
+      tagline: 'Gourmet French Pâtisserie & Digital Menu',
+      tag: 'CULINARY & HOSPITALITY',
+      tagBg: '#F8A593',
+      tagColor: '#181715',
       url: 'https://seri.rosaebrew.eu.cc',
-      desc: 'Luxury culinary presentation showcasing 100+ gourmet items, artisanal sourdoughs, dietary filters, and direct customer ordering.',
-      highlights: ['Interactive Menu System', 'Dietary Tags & Dietary Badges', 'Seamless Checkout'],
+      image: '/images/showcase_seri.png',
+      desc: 'A luxury dining showcase presenting 100+ gourmet dishes, artisanal sourdough breads, dietary filter systems, and direct customer ordering.',
+      highlights: ['Interactive Menu System', 'Dietary Tags & Badges', 'Visual Food Catalogue'],
     },
     {
+      id: 'tbs',
       title: 'The Bake Studio',
-      subtitle: 'By Shruti',
-      category: 'Bespoke Bakery & Custom Orders',
-      tag: 'ACTIVE PROJECT',
-      tagColor: '#EC4899',
+      tagline: 'Bespoke Bakery & Custom Cake Builder',
+      tag: 'ARTISANAL BAKERY',
+      tagBg: '#F7E7B4',
+      tagColor: '#181715',
       url: 'https://tbs.rosaebrew.eu.cc',
-      desc: 'Editorial cake showcase, custom bento builder, and automated WhatsApp order routing designed for an artisanal bakery.',
-      highlights: ['Custom Cake Customizer', 'Order Calculation Flow', 'Social Bio Integration'],
+      image: '/images/showcase_tbs.png',
+      desc: 'An editorial dessert catalogue, custom cake builder, and automated order calculation flow designed for an artisanal bakery brand.',
+      highlights: ['Custom Cake Builder', 'Order Calculation Flow', 'Social Bio Integration'],
     },
   ];
 
   return (
-    <section id="work" style={{ backgroundColor: 'var(--bg-dark)', color: '#FFFFFF', padding: '6.5rem 0 6rem 0' }}>
+    <section id="work" style={{ padding: '7.5rem 0', backgroundColor: 'var(--bg-canvas)' }}>
       <div className="container">
-        {/* Section Header with Clean SVG Icon & Scroll Reveal */}
-        <div className="scroll-reveal" style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
+
+        {/* Section Header */}
+        <div className="scroll-reveal" style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 4.5rem auto' }}>
           <h2
-            className="font-display"
             style={{
-              fontSize: 'clamp(2.6rem, 6vw, 5rem)',
-              color: '#FFFFFF',
-              letterSpacing: '-0.04em',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '1rem',
-              flexWrap: 'wrap',
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'clamp(2.2rem, 4.8vw, 3.4rem)',
+              fontWeight: 700,
+              color: 'var(--text-primary)',
+              letterSpacing: '-0.03em',
+              lineHeight: 1.15,
             }}
           >
-            <span>OUR WORK</span>
-            <span
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '52px',
-                height: '52px',
-                borderRadius: '12px',
-                backgroundColor: '#1E1E1E',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-              }}
-            >
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="9" stroke="#C3F53C" strokeWidth="2" />
-                <path d="M12 7V12L15 15" stroke="#C3F53C" strokeWidth="2" strokeLinecap="round" />
-              </svg>
+            Websites that drive <br />
+            <span className="italic-serif" style={{ fontWeight: 400 }}>
+              real business
             </span>
           </h2>
-          <p style={{ color: '#AAAAAA', fontSize: '1.05rem', marginTop: '0.75rem', maxWidth: '600px', margin: '0.75rem auto 0 auto' }}>
-            A selection of live client websites and active digital systems built for independent owners.
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', marginTop: '1rem', lineHeight: 1.6 }}>
+            Selected live projects handcrafted for independent creators and hospitality brands.
           </p>
         </div>
 
-        {/* 3 Real Project Cards with Staggered Scroll Reveal Animations */}
+        {/* 3 Real Project Cards (Centered flex layout) */}
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2.5rem',
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '2.25rem',
             marginBottom: '4.5rem',
           }}
         >
           {projects.map((project, idx) => (
             <div
-              key={idx}
-              className={`scroll-reveal stagger-${idx + 1} work-card`}
+              key={project.id}
+              className={`scroll-reveal stagger-${idx + 1}`}
+              style={{
+                backgroundColor: 'var(--bg-card)',
+                borderRadius: '28px',
+                border: '1px solid var(--border-subtle)',
+                boxShadow: 'var(--shadow-card)',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+                flex: '1 1 320px',
+                maxWidth: '380px',
+                width: '100%',
+                transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-6px)';
+                e.currentTarget.style.boxShadow = 'var(--shadow-float)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'var(--shadow-card)';
+              }}
             >
-              {/* Card Banner Preview */}
+              {/* Image Preview Header */}
               <div
                 style={{
-                  height: '210px',
-                  backgroundColor: '#141414',
-                  backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px)',
-                  backgroundSize: '16px 16px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '2rem',
+                  height: '250px',
+                  backgroundColor: 'var(--bg-surface)',
+                  overflow: 'hidden',
                   position: 'relative',
-                  borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
                 }}
               >
-                {/* Active Tag */}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'top center',
+                    transition: 'transform 0.5s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.04)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                />
+
                 <div
                   style={{
                     position: 'absolute',
-                    top: '1rem',
-                    left: '1rem',
-                    backgroundColor: 'rgba(0, 0, 0, 0.65)',
-                    backdropFilter: 'blur(6px)',
-                    border: `1px solid ${project.tagColor}`,
+                    top: '1.25rem',
+                    left: '1.25rem',
+                    padding: '0.35rem 0.8rem',
+                    borderRadius: '9999px',
+                    backgroundColor: project.tagBg,
                     color: project.tagColor,
                     fontSize: '0.72rem',
-                    fontWeight: 800,
-                    letterSpacing: '0.08em',
-                    padding: '0.35rem 0.75rem',
-                    borderRadius: '9999px',
+                    fontWeight: 700,
+                    letterSpacing: '0.04em',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                   }}
                 >
-                  ● {project.tag}
-                </div>
-
-                {/* Main Stylized Project Title */}
-                <div style={{ textAlign: 'center' }}>
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '2.5rem',
-                      fontWeight: 700,
-                      color: '#FFFFFF',
-                      letterSpacing: '-0.02em',
-                    }}
-                  >
-                    {project.title}
-                  </div>
-                  {project.subtitle && (
-                    <div style={{ fontSize: '0.85rem', color: '#94A3B8', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                      {project.subtitle}
-                    </div>
-                  )}
+                  {project.tag}
                 </div>
               </div>
 
               {/* Card Body */}
-              <div style={{ padding: '2.25rem 2rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                <div style={{ fontSize: '0.82rem', color: project.tagColor, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.5rem' }}>
-                  {project.category}
+              <div style={{ padding: '2rem 1.75rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.02em', marginBottom: '0.25rem' }}>
+                  {project.title}
+                </h3>
+
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500, marginBottom: '1.15rem' }}>
+                  {project.tagline}
                 </div>
 
-                <p style={{ color: '#AAAAAA', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '1.75rem' }}>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', lineHeight: 1.6, marginBottom: '1.75rem' }}>
                   {project.desc}
                 </p>
 
-                {/* Highlight Badges */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem', marginTop: 'auto' }}>
+                {/* Highlights */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.75rem', marginTop: 'auto' }}>
                   {project.highlights.map((item, i) => (
                     <span
                       key={i}
                       style={{
                         fontSize: '0.75rem',
                         padding: '0.3rem 0.7rem',
-                        backgroundColor: 'rgba(255, 255, 255, 0.06)',
-                        borderRadius: '6px',
-                        color: '#DDDDDD',
-                        border: '1px solid rgba(255, 255, 255, 0.08)',
+                        backgroundColor: 'var(--bg-canvas)',
+                        borderRadius: '9999px',
+                        color: 'var(--text-secondary)',
+                        fontWeight: 600,
+                        border: '1px solid var(--border-subtle)',
                       }}
                     >
-                      {item}
+                      ✓ {item}
                     </span>
                   ))}
                 </div>
 
-                {/* Actions */}
-                <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+                {/* Sleek, Consistent-Height Action Buttons */}
+                <div style={{ display: 'flex', gap: '0.65rem', alignItems: 'center' }}>
                   <a
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-pill-lime"
-                    style={{ flex: 1, fontSize: '0.84rem', padding: '0.65rem 1rem', textDecoration: 'none', textAlign: 'center' }}
+                    className="sivoro-btn-dark"
+                    style={{
+                      flex: 1,
+                      padding: '0.55rem 1rem',
+                      fontSize: '0.84rem',
+                      height: '38px',
+                      whiteSpace: 'nowrap',
+                    }}
                   >
                     <span>Visit Live Site</span>
                     <span>↗</span>
                   </a>
+
+                  <button
+                    onClick={onOpenProjectModal}
+                    className="sivoro-btn-light"
+                    style={{
+                      flex: 1,
+                      padding: '0.55rem 1rem',
+                      fontSize: '0.84rem',
+                      height: '38px',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    <span>Discuss Scope</span>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA Block */}
+        {/* Bottom CTA with sleek consistent button */}
         <div className="scroll-reveal stagger-2" style={{ textAlign: 'center' }}>
           <button
             onClick={onOpenProjectModal}
-            className="btn-pill-white"
-            style={{ padding: '0.85rem 2.2rem', fontSize: '0.92rem', cursor: 'pointer' }}
+            className="sivoro-btn-light"
           >
-            <span>Discuss Your Project With Us</span>
+            <span>Have a project in mind?</span>
             <span>→</span>
           </button>
         </div>

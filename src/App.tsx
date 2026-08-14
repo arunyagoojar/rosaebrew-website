@@ -1,55 +1,91 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { MascotStatement } from './components/MascotStatement';
 import { CreativePillars } from './components/CreativePillars';
-import { WorksProcess } from './components/WorksProcess';
 import { OurWork } from './components/OurWork';
 import { PricingSection } from './components/PricingSection';
+import { WorksProcess } from './components/WorksProcess';
 import { ContactFooter } from './components/ContactFooter';
-import { ProjectInquiryModal } from './components/ProjectInquiryModal';
+import { ProjectPage } from './components/ProjectPage';
 import { useScrollReveal } from './hooks/useScrollReveal';
+import { useTheme } from './hooks/useTheme';
 
 export function App() {
-  const [modalOpen, setModalOpen] = useState(false);
-  useScrollReveal();
+  const [view, setView] = useState<'home' | 'project'>('home');
+  const { theme, toggleTheme } = useTheme();
+  useScrollReveal(view);
 
-  const handleOpenModal = () => setModalOpen(true);
-  const handleCloseModal = () => setModalOpen(false);
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === '#start-project') {
+        setView('project');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (view === 'project' && window.location.hash !== '#start-project') {
+        setView('home');
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    if (window.location.hash === '#start-project') {
+      setView('project');
+    }
+
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [view]);
+
+  const handleOpenProjectPage = () => {
+    window.location.hash = 'start-project';
+    setView('project');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleBackHome = () => {
+    window.location.hash = '';
+    setView('home');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (view === 'project') {
+    return (
+      <ProjectPage
+        onBack={handleBackHome}
+      />
+    );
+  }
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'var(--bg-main)' }}>
-      {/* Viewport Scroll Progress Line */}
-      <div id="scroll-progress-line" className="scroll-progress-line" style={{ width: '0%' }}></div>
-
-      {/* 1. Header with Scroll Reveal */}
-      <Header onOpenProjectModal={handleOpenModal} />
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: 'var(--bg-canvas)', color: 'var(--text-primary)' }}>
+      
+      {/* 1. Header with Rounded Mouse Pointer Logo & Animated Mobile Menu */}
+      <Header
+        onOpenProjectModal={handleOpenProjectPage}
+        theme={theme}
+        onToggleTheme={toggleTheme}
+      />
 
       <main style={{ flex: 1 }}>
-        {/* 2. Hero Section (Centered Title + Depth Mouse Pointers + Showcase Frame) */}
-        <Hero onOpenProjectModal={handleOpenModal} />
+        {/* 2. Editorial Hero (Headline + Swipe Carousel + Infinite Marquee + Roaming Butterflies) */}
+        <Hero onOpenProjectModal={handleOpenProjectPage} />
 
-        {/* 3. Mascot & Statement (Pencil Mascot + Stacked Mini Cards) */}
-        <MascotStatement onOpenProjectModal={handleOpenModal} />
+        {/* 3. Studio Philosophy / About Narrative */}
+        <MascotStatement onOpenProjectModal={handleOpenProjectPage} />
 
-        {/* 4. Creative Pillars (3 Tilted Pastel Cards: Branding, Web & Apps, Marketing) */}
-        <CreativePillars onOpenProjectModal={handleOpenModal} />
+        {/* 4. Capabilities (Balanced 2x2 grid with Notion doodles) */}
+        <CreativePillars onOpenProjectModal={handleOpenProjectPage} />
 
-        {/* 5. Works Process (01-02-03 Radar Cards + Smooth Rocket Bar) */}
+        {/* 5. Selected Work (Akuri, Seri Gourmet, The Bake Studio) */}
+        <OurWork onOpenProjectModal={handleOpenProjectPage} />
+
+        {/* 6. Pricing Cards (Starter, Featured Growth Pink Gradient, Custom Tools) */}
+        <PricingSection onOpenProjectModal={handleOpenProjectPage} />
+
+        {/* 7. Core Studio Values (01 Transparency, 02 Speed & Craft, 03 Full Ownership) */}
         <WorksProcess />
-
-        {/* 6. Our Work (Akuri, Seri, The Bake Studio) */}
-        <OurWork onOpenProjectModal={handleOpenModal} />
-
-        {/* 7. Transparent Pricing (Projects start from ₹5,000) */}
-        <PricingSection onOpenProjectModal={handleOpenModal} />
       </main>
 
-      {/* 8. Dark Contact Footer with Direct Email rosaebrew@gmail.com */}
-      <ContactFooter onOpenProjectModal={handleOpenModal} />
-
-      {/* Project Inquiry Modal */}
-      <ProjectInquiryModal isOpen={modalOpen} onClose={handleCloseModal} />
+      {/* 8. Pre-Footer Banner & Multi-Column Navigation */}
+      <ContactFooter onOpenProjectModal={handleOpenProjectPage} />
     </div>
   );
 }
