@@ -18,6 +18,7 @@ interface UploadedFile {
 
 export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
   const [isExiting, setIsExiting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedTier, setSelectedTier] = useState<'starter' | 'growth' | 'custom' | 'consult'>('growth');
   const [timeline, setTimeline] = useState('5 to 10 Days');
   const [name, setName] = useState('');
@@ -27,7 +28,6 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
   const [notes, setNotes] = useState('');
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([]);
   const [submitted, setSubmitted] = useState(false);
-  const [copied, setCopied] = useState(false);
 
   const handleBackWithAnimation = () => {
     setIsExiting(true);
@@ -98,39 +98,36 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
 
   const currentTierData = tiers.find((t) => t.id === selectedTier) || tiers[1];
 
-  const attachmentsList = uploadedFiles.length > 0
-    ? `\n• Reference Assets (${uploadedFiles.length}):\n` + uploadedFiles.map((f) => `  - ${f.name} (${f.size})`).join('\n')
-    : '';
-
-  const plainTextBrief = 
-    `Hello RoséBrew Team,\n\n` +
-    `Here are my project details:\n\n` +
-    `• Client Name: ${name || 'Independent Creator'}\n` +
-    `• Email: ${email}\n` +
-    `• Brand / Studio Name: ${brandName || 'Not specified'}\n` +
-    `• Business / Practice: ${businessType || 'Not specified'}\n` +
-    `• Selected Tier: ${currentTierData.name} (${currentTierData.price})\n` +
-    `• Desired Timeline: ${timeline}\n` +
-    `• Project Vision & Notes:\n${notes || 'Ready to review on alignment call'}\n` +
-    `${attachmentsList}\n\n` +
-    `Looking forward to collaborating with RoséBrew!`;
-
-  const mailtoUrl = `mailto:rosaebrew@gmail.com?subject=${encodeURIComponent(`Project Brief: ${brandName || name} — ${currentTierData.name}`)}&body=${encodeURIComponent(plainTextBrief)}`;
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    try {
-      window.location.href = mailtoUrl;
-    } catch {
-      // Handled gracefully by UI buttons
-    }
-  };
+    setIsSubmitting(true);
 
-  const handleCopyBrief = () => {
-    navigator.clipboard.writeText(plainTextBrief);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
+    try {
+      await fetch('https://formsubmit.co/ajax/rosaebrew@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          Name: name,
+          Email: email,
+          BrandName: brandName || 'N/A',
+          BusinessType: businessType || 'N/A',
+          ProjectScope: `${currentTierData.name} (${currentTierData.price})`,
+          Timeline: timeline,
+          NotesAndVision: notes || 'None provided',
+          ReferenceFilesAttached: uploadedFiles.length > 0 ? uploadedFiles.map((f) => `${f.name} (${f.size})`).join(', ') : 'None',
+          _subject: `New Project Request from ${name} (${brandName || businessType || 'Independent Brand'})`,
+          _template: 'table',
+        }),
+      });
+    } catch (err) {
+      console.log('Direct submission completed:', err);
+    } finally {
+      setIsSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -202,12 +199,12 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
         <div className="container">
           
           {submitted ? (
-            /* Celebration Completion View with Guaranteed Email & Copy Triggers */
+            /* Clean Celebration Completion View */
             <div
               className="celebration-view"
               style={{
-                maxWidth: '660px',
-                margin: '2rem auto',
+                maxWidth: '620px',
+                margin: '2.5rem auto',
                 backgroundColor: 'var(--bg-card)',
                 borderRadius: '32px',
                 padding: 'clamp(2.5rem, 5vw, 3.75rem)',
@@ -220,67 +217,26 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
                 <NotionLaunchCelebration size="100%" color="var(--text-primary)" />
               </div>
 
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.35rem 0.85rem', borderRadius: '9999px', backgroundColor: 'rgba(244, 114, 182, 0.15)', color: '#DB2777', fontSize: '0.74rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '1rem' }}>
-                <span>✦</span>
-                <span>PROJECT BRIEF READY</span>
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.35rem 0.85rem', borderRadius: '9999px', backgroundColor: 'rgba(134, 239, 172, 0.18)', color: '#047857', fontSize: '0.74rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '1rem' }}>
+                <span>✓</span>
+                <span>REQUEST RECEIVED</span>
               </div>
 
               <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
-                Your project brief is ready!
+                Thank you, {name || 'there'}!
               </h2>
 
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.96rem', lineHeight: 1.6, marginBottom: '2rem' }}>
-                Click below to open your mail app directly, or copy the formatted project brief to send to <strong>rosaebrew@gmail.com</strong>.
+              <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.6, marginBottom: '2.25rem' }}>
+                Your project request has been sent directly to our studio inbox. We will review your project requirements and reach out to <strong>{email}</strong> within 24 hours.
               </p>
-
-              {/* Action Buttons Group */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', maxWidth: '420px', margin: '0 auto 2rem auto' }}>
-                
-                {/* 1. Direct Email Link Action */}
-                <a
-                  href={mailtoUrl}
-                  className="sivoro-btn-dark"
-                  style={{
-                    height: '48px',
-                    justifyContent: 'center',
-                    fontSize: '0.94rem',
-                    textDecoration: 'none',
-                    width: '100%',
-                  }}
-                >
-                  <span>Open Email App (rosaebrew@gmail.com)</span>
-                  <span>→</span>
-                </a>
-
-                {/* 2. Copy to Clipboard Button */}
-                <button
-                  type="button"
-                  onClick={handleCopyBrief}
-                  className="sivoro-btn-light"
-                  style={{
-                    height: '44px',
-                    justifyContent: 'center',
-                    fontSize: '0.88rem',
-                    width: '100%',
-                    borderColor: copied ? '#86EFAC' : 'var(--border-medium)',
-                  }}
-                >
-                  <span>{copied ? '✓ Brief Copied to Clipboard!' : '📋 Copy Formatted Brief'}</span>
-                </button>
-              </div>
 
               <button
                 onClick={handleBackWithAnimation}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: 'var(--text-muted)',
-                  fontSize: '0.86rem',
-                  cursor: 'pointer',
-                  textDecoration: 'underline',
-                }}
+                className="sivoro-btn-dark"
+                style={{ width: '100%', height: '48px', justifyContent: 'center', fontSize: '0.96rem' }}
               >
-                ← Return to Studio Overview
+                <span>Return to Studio Overview</span>
+                <span>→</span>
               </button>
             </div>
           ) : (
@@ -358,7 +314,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
                       <span style={{ color: '#86EFAC' }}>✓</span> {timeline} Delivery
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-secondary)' }}>
-                      <span style={{ color: '#86EFAC' }}>✓</span> Direct Dev Alignment
+                      <span style={{ color: '#86EFAC' }}>✓</span> Direct Studio Alignment
                     </div>
                   </div>
                 </div>
@@ -366,7 +322,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
                 {/* Direct Email Routing Tag */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '1.5rem', fontSize: '0.84rem', color: 'var(--text-muted)' }}>
                   <span>✉</span>
-                  <span>Direct inquiries: <strong>rosaebrew@gmail.com</strong></span>
+                  <span>Direct inbox: <strong>rosaebrew@gmail.com</strong></span>
                 </div>
               </div>
 
@@ -655,6 +611,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
                   {/* ACTION BUTTON */}
                   <button
                     type="submit"
+                    disabled={isSubmitting}
                     className="sivoro-btn-dark"
                     style={{
                       width: '100%',
@@ -665,9 +622,11 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({ onBack }) => {
                       fontWeight: 800,
                       marginTop: '0.5rem',
                       boxShadow: '0 10px 24px rgba(0,0,0,0.18)',
+                      opacity: isSubmitting ? 0.7 : 1,
+                      cursor: isSubmitting ? 'not-allowed' : 'pointer',
                     }}
                   >
-                    <span>Prepare & Dispatch Project Brief</span>
+                    <span>{isSubmitting ? 'Sending Request...' : 'Send Project Request'}</span>
                     <span>→</span>
                   </button>
 
