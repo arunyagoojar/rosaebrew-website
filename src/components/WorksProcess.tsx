@@ -4,20 +4,20 @@ export const WorksProcess: React.FC = () => {
   return (
     <section style={{ padding: '6rem 0', backgroundColor: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
       <div className="container">
-        {/* Headline */}
+        {/* Headline matching TURN.STUDIO */}
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h2
             className="font-display"
             style={{
               fontSize: 'clamp(2.4rem, 5vw, 4.2rem)',
-              color: 'var(--dark-950)',
+              color: 'var(--text-dark)',
               letterSpacing: '-0.04em',
             }}
           >
             Works Process
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginTop: '0.5rem' }}>
-            An integrated, painless setup built for busy bakery owners who belong in the kitchen, not wrestling with tech.
+            A structured, collaborative approach built for independent businesses.
           </p>
         </div>
 
@@ -31,19 +31,19 @@ export const WorksProcess: React.FC = () => {
             margin: '0 auto',
           }}
         >
-          {/* Step 1 */}
+          {/* Card 01 */}
           <div className="process-card">
             <div style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--text-light)', marginBottom: '0.75rem', letterSpacing: '0.1em' }}>
               01
             </div>
-            <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--dark-900)', marginBottom: '0.4rem' }}>
-              Discover & Catalogue
+            <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '0.4rem' }}>
+              Discover & Define
             </h3>
             <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Menu Structure & Flavours
+              Strategy & Direction
             </div>
 
-            {/* Radar / Geometry Icon */}
+            {/* Radar / Compass Diagram */}
             <div
               style={{
                 width: '90px',
@@ -63,23 +63,23 @@ export const WorksProcess: React.FC = () => {
             </div>
 
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6, marginTop: 'auto' }}>
-              We review your existing Instagram, Zomato/Swiggy menu, and pricing sheets. We structure your products into clear categories with dietary tags, weights, and flavours.
+              We understand your business, target clients, and key offerings to shape a clear, structured website direction.
             </p>
           </div>
 
-          {/* Step 2 */}
+          {/* Card 02 */}
           <div className="process-card">
             <div style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--text-light)', marginBottom: '0.75rem', letterSpacing: '0.1em' }}>
               02
             </div>
-            <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--dark-900)', marginBottom: '0.4rem' }}>
+            <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '0.4rem' }}>
               Design & Build
             </h3>
             <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Bespoke UI & Custom Cake Wizard
+              Design & Experience
             </div>
 
-            {/* Geometry Icon 2 */}
+            {/* Starburst Geometry Diagram */}
             <div
               style={{
                 width: '90px',
@@ -98,23 +98,23 @@ export const WorksProcess: React.FC = () => {
             </div>
 
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6, marginTop: 'auto' }}>
-              We design a stunning, mobile-first digital experience with high-res cake showcases, custom cake inquiry forms, and instant WhatsApp ordering pipelines.
+              We craft responsive layouts with clean typography, clear information hierarchy, and mobile-friendly touchpoints.
             </p>
           </div>
 
-          {/* Step 3 */}
+          {/* Card 03 */}
           <div className="process-card">
             <div style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--text-light)', marginBottom: '0.75rem', letterSpacing: '0.1em' }}>
               03
             </div>
-            <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--dark-900)', marginBottom: '0.4rem' }}>
-              Launch & Connect
+            <h3 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '0.4rem' }}>
+              Review & Launch
             </h3>
             <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Instagram Bio & WhatsApp Sync
+              Refine & Connect
             </div>
 
-            {/* Geometry Icon 3 */}
+            {/* Concentric Target Circles Diagram */}
             <div
               style={{
                 width: '90px',
@@ -133,7 +133,7 @@ export const WorksProcess: React.FC = () => {
             </div>
 
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6, marginTop: 'auto' }}>
-              We connect your custom domain, set up your Instagram link in bio, and integrate WhatsApp automated greetings so every new DM converts seamlessly into an order.
+              We review the build together, connect your custom domain, test all enquiry flows, and launch your digital presence.
             </p>
           </div>
         </div>

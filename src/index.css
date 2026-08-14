@@ -1,35 +1,31 @@
 /* ==========================================================================
-   ROSAEBREW — DIGITAL HOMES FOR INDEPENDENT BAKERIES
-   Design System (TURN.STUDIO Bold Brutalist-Modern Aesthetic)
+   ROSAEBREW — EXACT TURN.STUDIO BRUTALIST-MODERN DESIGN SYSTEM
    ========================================================================== */
 
 :root {
-  /* Colors */
-  --bg-main: #F8F8F8;
-  --bg-card-white: #FFFFFF;
-  --dark-950: #0D0D0D;
-  --dark-900: #141414;
-  --dark-800: #1E1E1E;
-  --dark-700: #2C2C2C;
+  /* Canvas Colors */
+  --bg-main: #F7F7F7;
+  --bg-white: #FFFFFF;
+  --bg-dark: #111111;
+  --bg-dark-card: #1A1A1A;
 
-  /* Pastel Tilted Cards */
+  /* Pastel Tilted Card Palette (Exact match to TURN.STUDIO) */
   --pastel-blue: #D6ECF8;
   --pastel-green: #D6F6E5;
   --pastel-peach: #FDECD2;
-  --pastel-pink: #FDE2EA;
 
   /* Accent Cursors */
   --cursor-orange: #FF6B00;
   --cursor-green: #22C55E;
-  --cursor-purple: #A855F7;
-  --cursor-blue: #0EA5E9;
   --cursor-pink: #EC4899;
+  --cursor-blue: #0EA5E9;
 
+  /* Text Colors */
   --text-dark: #121212;
-  --text-muted: #666666;
-  --text-light: #999999;
+  --text-muted: #555555;
+  --text-light: #888888;
 
-  /* Fonts */
+  /* Typography */
   --font-display: 'Syne', 'Plus Jakarta Sans', -apple-system, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', 'DM Sans', -apple-system, sans-serif;
@@ -40,10 +36,10 @@
   --radius-lg: 24px;
   --radius-pill: 9999px;
 
-  /* Shadows */
+  /* Elevation */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.1);
   --shadow-dark: 0 20px 50px rgba(0, 0, 0, 0.4);
 
   --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -80,11 +76,11 @@ body {
   background: #EAEAEA;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--dark-900);
+  background: var(--text-dark);
   border-radius: 4px;
 }
 
-/* Typography Display */
+/* Headings */
 .font-display {
   font-family: var(--font-display);
   font-weight: 800;
@@ -92,15 +88,10 @@ body {
   text-transform: uppercase;
 }
 
-.font-serif-italic {
-  font-family: var(--font-serif);
-  font-style: italic;
-}
-
 /* Containers */
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
@@ -116,7 +107,31 @@ body {
   padding-right: 1.5rem;
 }
 
-/* Buttons */
+/* Pill Buttons matching TURN.STUDIO */
+.btn-pill-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-pill);
+  background-color: #FFFFFF;
+  color: var(--text-dark);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.btn-pill-white:hover {
+  border-color: var(--text-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
 .btn-pill-black {
   display: inline-flex;
   align-items: center;
@@ -125,11 +140,11 @@ body {
   font-family: var(--font-sans);
   font-size: 0.88rem;
   font-weight: 600;
-  padding: 0.75rem 1.6rem;
+  padding: 0.75rem 1.75rem;
   border-radius: var(--radius-pill);
-  background-color: var(--dark-900);
+  background-color: var(--text-dark);
   color: #FFFFFF;
-  border: 1px solid var(--dark-900);
+  border: 1px solid var(--text-dark);
   cursor: pointer;
   text-decoration: none;
   transition: all var(--transition);
@@ -139,30 +154,6 @@ body {
   background-color: #000000;
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
-}
-
-.btn-pill-white {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-family: var(--font-sans);
-  font-size: 0.88rem;
-  font-weight: 600;
-  padding: 0.75rem 1.6rem;
-  border-radius: var(--radius-pill);
-  background-color: #FFFFFF;
-  color: var(--dark-900);
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-  text-decoration: none;
-  transition: all var(--transition);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-.btn-pill-white:hover {
-  border-color: var(--dark-900);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
 .btn-pill-lime {
@@ -193,10 +184,10 @@ body {
   position: absolute;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 10px 4px 6px;
+  gap: 5px;
+  padding: 3px 9px 3px 6px;
   border-radius: var(--radius-pill);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: #FFFFFF;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -207,20 +198,18 @@ body {
 
 .cursor-tag-orange { background-color: var(--cursor-orange); }
 .cursor-tag-green { background-color: var(--cursor-green); }
-.cursor-tag-purple { background-color: var(--cursor-purple); }
-.cursor-tag-blue { background-color: var(--cursor-blue); }
 .cursor-tag-pink { background-color: var(--cursor-pink); }
 
 @keyframes floatCursor {
   0% { transform: translateY(0px) rotate(0deg); }
-  100% { transform: translateY(-8px) rotate(-1deg); }
+  100% { transform: translateY(-7px) rotate(-1.5deg); }
 }
 
-/* Stamp Badge */
-.stamp-badge-blue {
+/* Rotating Blue Stamp Badge */
+.stamp-badge-cyan {
   position: absolute;
-  width: 95px;
-  height: 95px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   background-color: #0EA5E9;
   color: #FFFFFF;
@@ -232,17 +221,44 @@ body {
   font-weight: 700;
   line-height: 1.2;
   padding: 8px;
-  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.35);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.35);
   z-index: 10;
-  animation: pulseRotate 12s linear infinite;
+  animation: slowSpin 14s linear infinite;
 }
 
-@keyframes pulseRotate {
+@keyframes slowSpin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-/* Tilted Feature Cards (from TURN.STUDIO reference) */
+/* Inline Graphic Badges in Headlines */
+.inline-img-badge {
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  vertical-align: middle;
+  margin: 0 0.35rem;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: var(--shadow-sm);
+}
+
+.inline-dark-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: var(--text-dark);
+  color: #FFFFFF;
+  vertical-align: middle;
+  margin: 0 0.35rem;
+  font-size: 1rem;
+}
+
+/* Tilted Feature Cards */
 .tilted-card {
   border-radius: 20px;
   padding: 2.5rem 2rem;
@@ -253,23 +269,14 @@ body {
   flex-direction: column;
   height: 100%;
 }
-
 .tilted-card:hover {
   transform: translateY(-8px) rotate(0deg) !important;
   box-shadow: var(--shadow-lg);
 }
 
-.card-tilt-left {
-  transform: rotate(-2deg);
-}
-
-.card-tilt-center {
-  transform: rotate(1deg);
-}
-
-.card-tilt-right {
-  transform: rotate(3deg);
-}
+.card-tilt-left { transform: rotate(-2.5deg); }
+.card-tilt-center { transform: rotate(0deg); }
+.card-tilt-right { transform: rotate(3.5deg); }
 
 /* Works Process Cards */
 .process-card {
@@ -282,26 +289,10 @@ body {
   flex-direction: column;
   transition: all var(--transition);
 }
-
 .process-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-md);
-  border-color: var(--dark-900);
-}
-
-/* Dark Case Study Cards */
-.dark-case-card {
-  background-color: #1A1A1A;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
-  transition: all var(--transition);
-}
-
-.dark-case-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: var(--text-dark);
 }
 
 /* Rocket Progress Bar */
@@ -312,11 +303,11 @@ body {
   background-color: #E5E7EB;
   border-radius: 9999px;
   position: relative;
-  margin: 3rem auto 0 auto;
+  margin: 3.5rem auto 0 auto;
 }
 
 .rocket-bar-fill {
-  width: 75%;
+  width: 72%;
   height: 100%;
   background: linear-gradient(90deg, #34D399 0%, #10B981 100%);
   border-radius: 9999px;
@@ -324,8 +315,8 @@ body {
 
 .rocket-icon {
   position: absolute;
-  left: 72%;
+  left: 70%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
