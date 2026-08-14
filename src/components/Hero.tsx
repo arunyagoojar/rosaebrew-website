@@ -6,15 +6,15 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
   return (
-    <section style={{ paddingTop: '9rem', paddingBottom: '5.5rem', position: 'relative', overflow: 'hidden' }}>
+    <section style={{ paddingTop: '12rem', paddingBottom: '6rem', position: 'relative', overflow: 'hidden' }}>
       <div className="container" style={{ textAlign: 'center' }}>
-        {/* Perfectly Centered Wordmark with Depth-Layered Butterfly-Like Mouse Pointers */}
+        {/* Perfectly Centered Wordmark with Generous Breathing Space & Butterfly Depth Pointers */}
         <div
           style={{
             position: 'relative',
             width: '100%',
             maxWidth: '960px',
-            margin: '0 auto 2.75rem auto',
+            margin: '0 auto 3.5rem auto',
             padding: '0 0.5rem',
             display: 'flex',
             justifyContent: 'center',
@@ -48,11 +48,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
             </text>
           </svg>
 
-          {/* =========================================================
-              BUTTERFLY-LIKE MOUSE POINTERS WITH REAL VISUAL DEPTH
-              ========================================================= */}
-          
-          {/* 1. Foreground Sharp Pointers (20px - 18px) */}
+          {/* Butterfly-Like Mouse Pointers With Depth */}
+          {/* Foreground Sharp Pointers */}
           <div className="butterfly-pointer bf-pointer-1">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#FF6B00" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
@@ -77,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
             </svg>
           </div>
 
-          {/* 2. Midground Smaller Fluttering Pointers (14px - 13px) */}
+          {/* Midground Pointers */}
           <div className="butterfly-pointer bf-pointer-5">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#F59E0B" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
@@ -90,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
             </svg>
           </div>
 
-          {/* 3. Background Tiny Distant Pointers (10px - 9px with subtle blur) */}
+          {/* Background Distant Pointers */}
           <div className="butterfly-pointer bf-pointer-7">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
               <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#84CC16" stroke="#121212" strokeWidth="1" strokeLinejoin="round" />
@@ -206,7 +203,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
             </div>
           </div>
 
-          {/* Bottom Dark Bar */}
+          {/* Bottom Dark Bar without dashes */}
           <div
             style={{
               backgroundColor: '#111111',
@@ -221,8 +218,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
               gap: '0.5rem',
             }}
           >
-            <span>Rosaebrew • Independent Digital Studio</span>
-            <span>Projects start from ₹5,000 • Email: rosaebrew@gmail.com</span>
+            <span>Rosaebrew, Independent Digital Studio</span>
+            <span>Projects start from ₹5,000 | Email: rosaebrew@gmail.com</span>
           </div>
         </div>
       </div>
