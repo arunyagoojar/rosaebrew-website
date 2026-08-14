@@ -7,19 +7,6 @@ interface MascotStatementProps {
 export const MascotStatement: React.FC<MascotStatementProps> = ({ onOpenProjectModal }) => {
   return (
     <section style={{ padding: '6rem 0', backgroundColor: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.06)', borderBottom: '1px solid rgba(0,0,0,0.06)', position: 'relative', overflow: 'hidden' }}>
-      {/* Decorative Fixed Floating Pointer */}
-      <div className="butterfly-pointer" style={{ top: '30px', left: '8%', animation: 'butterflyFloat2 6.5s ease-in-out infinite' }}>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#F59E0B" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
-        </svg>
-      </div>
-
-      <div className="butterfly-pointer" style={{ bottom: '40px', right: '10%', animation: 'butterflyFloat4 7s ease-in-out infinite' }}>
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#EC4899" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
-        </svg>
-      </div>
-
       <div className="container-narrow" style={{ textAlign: 'center' }}>
         {/* Exact Illustrated Pencil-Carrying Mascot Vector from TURN.STUDIO */}
         <div style={{ marginBottom: '2.5rem', display: 'flex', justifyContent: 'center' }}>

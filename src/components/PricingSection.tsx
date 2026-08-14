@@ -6,32 +6,7 @@ interface PricingSectionProps {
 
 export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenProjectModal }) => {
   return (
-    <section id="pricing" style={{ padding: '6rem 0', backgroundColor: '#FFFFFF', borderTop: '1px solid var(--border-light)', position: 'relative', overflow: 'hidden' }}>
-      {/* Floating Pointers in Empty Canvas Margins */}
-      <div className="butterfly-pointer" style={{ top: '12%', left: '6%', animation: 'butterflyFloat2 6.5s ease-in-out infinite' }}>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#10B981" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
-        </svg>
-      </div>
-
-      <div className="butterfly-pointer" style={{ top: '18%', right: '8%', animation: 'butterflyFloat4 5.8s ease-in-out infinite' }}>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#A855F7" stroke="#121212" strokeWidth="1.5" strokeLinejoin="round" />
-        </svg>
-      </div>
-
-      <div className="butterfly-pointer" style={{ bottom: '15%', left: '9%', animation: 'butterflyFloat1 7.2s ease-in-out infinite' }}>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#FF6B00" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
-        </svg>
-      </div>
-
-      <div className="butterfly-pointer" style={{ bottom: '20%', right: '7%', animation: 'butterflyFloat3 6.6s ease-in-out infinite' }}>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-          <path d="M4 2L20 9.5L12 12.5L9.5 20L4 2Z" fill="#06B6D4" stroke="#121212" strokeWidth="1.2" strokeLinejoin="round" />
-        </svg>
-      </div>
-
+    <section id="pricing" style={{ padding: '6rem 0', backgroundColor: '#FFFFFF', borderTop: '1px solid var(--border-light)', position: 'relative' }}>
       <div className="container-narrow">
         <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
           <h2
